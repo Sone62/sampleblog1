@@ -48,6 +48,9 @@ border-bottom: 1px solid #eee;
     margin-left: auto;
     margin-right: auto;
 }
+.navibar {
+    text-align: left;
+}
 
 @tailwind base;
 @tailwind components;
