@@ -39,7 +39,9 @@ border: 1px solid #ddd;
 padding: 10px 0;
 border-bottom: 1px solid #eee;
 }
-
+.navibar {
+color: #000000;
+}
 .declutter-form {   
     text-align: left;
 
