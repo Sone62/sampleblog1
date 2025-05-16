@@ -54,9 +54,6 @@ label {
 font-weight: bold;
 }
 
-
-
-
 input[type="text"], textarea, select {
 width: 100%;
 padding: 10px;
@@ -93,6 +90,7 @@ cursor: pointer;
 buttonA:hover {
 background-color: #219150;
 }
+
 output {
 background: #fff;
 padding: 20px;
@@ -104,11 +102,8 @@ padding: 10px 0;
 border-bottom: 1px solid #eee;
 }
 .navibar {   
-    text-align: left;
-
+    text-align: right;
     max-width: 800px;
-    margin-top: 20px;
-    margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
 }
