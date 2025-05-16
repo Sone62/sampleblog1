@@ -19,8 +19,31 @@
         </div>
 
         <!-- For visitors to select type of item -->
-      
-    <!-- For visitors to select type of item -->  
+        <div class="declutter-form">
+        <form id="declutterForm">
+        <label for="category">Select type:</label>
+        <select id="category" name="category">
+        <option value="">--Choose--</option>
+        <option value="clothes">Clothes</option>
+        <option value="electronics">Electronics</option>
+        <option value="furniture">Furniture</option>
+        <option value="books">Books</option>
+        </select>
+        <br>
+        <label for="description">Describe item or upload image (optional):</label>
+        <textarea id="description" placeholder="Describe your item..."></textarea>
+        <input class="new-post-btn-container" type="file" accept="image/*">
+        <br>    
+        <label for="location">Where are you (optional):</label>
+        <input type="text" id="location" placeholder="Enter your location..." />
+        <button type="button" onclick="useCurrentLocation()">Use Current Location</button>
+        <br><br>
+        <button class="new-post-btn-container" type="submit">Tell me!</button>
+        </form>
+        <div/>
+
+<!-- For visitors to select type of item -->  
+  <main class="container">
     <section class="input-section">
       <h2>What would you like to declutter?</h2>
       
