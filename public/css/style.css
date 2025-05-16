@@ -50,13 +50,13 @@ cursor: pointer;
 buttonA:hover {
 background-color: #219150;
 }
-.output {
+output {
 background: #fff;
 padding: 20px;
 margin-top: 30px;
-border: 1px solid #ddd;
+border: 1px solid #740303;
 }
-.result-item {
+result-item {
 padding: 10px 0;
 border-bottom: 1px solid #eee;
 }
