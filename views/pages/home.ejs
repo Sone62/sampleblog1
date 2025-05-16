@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Declutterly: where your things go matters</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
     <link rel="stylesheet" href="/css/style.css" >
 </head>
@@ -17,6 +17,19 @@
             <h1>Welcome to my blog</h1>
             <h2>Learn about what happened in my day!</h2>
         </div>
+
+        <!-- Form for visitors to select type of item -->
+        <form id="declutterForm">
+        <label for="category">1. Select category:</label>
+        <select id="category" name="category">
+        <option value="">--Choose--</option>
+        <option value="clothes">Clothes</option>
+        <option value="electronics">Electronics</option>
+        <option value="furniture">Furniture</option>
+        <option value="books">Books</option>
+        </select>
+
+
 
         <div class="new-post-btn-container">
            <a href="/new" class="button" role="button">+ New Post</a>
