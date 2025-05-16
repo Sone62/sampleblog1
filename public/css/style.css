@@ -87,3 +87,16 @@ li.done {
   text-decoration: line-through;
   background-color: #d4edda;
 }
+a {
+    text-decoration: none;
+    color: #007bff; /* Default color */
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+a:hover {
+    color: #0056b3; /* Darker color on hover */
+    text-decoration: underline;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
