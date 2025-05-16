@@ -19,6 +19,7 @@
         </div>
 
         <!-- Form for visitors to select type of item -->
+        <div>
         <form id="declutterForm">
         <label for="category">1. Select category:</label>
         <select id="category" name="category">
@@ -31,9 +32,20 @@
 
         <label for="description">Describe your item (optional):</label>
         <textarea id="description" placeholder="Describe your item..."></textarea>
+        <br><br>
+        <label for="uploadimage">Upload an image (optional):</label>
         <input type="file" accept="image/*">
+        <br><br>
+        <label for="location">3. Where are you (optional):</label>
+        <input type="text" id="location" placeholder="Enter your location..." />
+        <button type="button" onclick="useCurrentLocation()">Use Current Location</button>
 
+        <br><br>
+        <button type="submit">Find Option</button>
+        </form>
+        <div/>
 
+         <!-- New blog posts -->
         <div class="new-post-btn-container">
            <a href="/new" class="button" role="button">+ New Post</a>
         </div>
