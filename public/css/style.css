@@ -32,6 +32,17 @@ cursor: pointer;
 button:hover {
 background-color: #219150;
 }
+buttonA {
+background-color: #ffffff;
+color: rgb(255, 255, 255);
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+buttonA:hover {
+background-color: #219150;
+}
 .output {
 background: #fff;
 padding: 20px;
