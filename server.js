@@ -96,5 +96,42 @@ app.post("/delete/:id", async (req, res) => {
     }
   });
 
+  // fetch location
+const express = require('express');
+const fetch = require('node-fetch');
+const app = express();
+const PORT = 3000;
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+
+// Route: fetch data from data.gov.sg API and render page
+app.get('/locations', async (req, res) => {
+try {
+const [donationRes, repairRes, recyclingRes] = await Promise.all([
+fetch('https://data.gov.sg/api/action/datastore_search?resource_id=09e43184-c4d2-4b35-8b2c-26ec3f54b102'), // Example: Donation bins
+fetch('https://data.gov.sg/api/action/datastore_search?resource_id=REPLACE_WITH_REPAIR_ID'),
+fetch('https://data.gov.sg/api/action/datastore_search?resource_id=REPLACE_WITH_RECYCLING_ID'),
+]);
+
+const donationData = await donationRes.json();
+const repairData = await repairRes.json();
+const recyclingData = await recyclingRes.json();
+
+res.render('results', {
+donations: donationData.result.records,
+repairs: repairData.result.records,
+recyclings: recyclingData.result.records
+});
+} catch (error) {
+console.error(error);
+res.send('Error fetching location data');
+}
+});
+
+app.listen(PORT, () => {
+console.log(`App running at http://localhost:${PORT}`);
+});
+
 // Tells the app which port to run on
 app.listen(8080);
