@@ -29,19 +29,16 @@
         <option value="furniture">Furniture</option>
         <option value="books">Books</option>
         </select>
-
-        <label for="description">Describe your item or updload and image (optional):</label>
+        <br>
+        <label for="description">Describe your item or upload and image (optional):</label>
         <textarea id="description" placeholder="Describe your item..."></textarea>
         <input type="file" accept="image/*">
-        <br><br>
-    
-    
-        <label for="location">3. Where are you (optional):</label>
+        <br>    
+        <label for="location">Where are you (optional):</label>
         <input type="text" id="location" placeholder="Enter your location..." />
         <button type="button" onclick="useCurrentLocation()">Use Current Location</button>
-
         <br><br>
-        <button type="submit">Find Option</button>
+        <button class="outline primary" type="submit">Find Option</button>
         </form>
         <div/>
 
@@ -51,15 +48,7 @@
         </div>
 
         <!-- Show blog posts -->
-        <% blogs.forEach(post => { %>
-            <article class="post-container">
-                <h3><%= post.title %></h3>
-                <p><%= post.content %></p>
-                <form action="/delete/<%= post.id %>" method="post" onsubmit="return confirm('Do you really want to delete this post?');">
-                    <button class="outline primary" type="submit">Delete</button>
-                </form>
-            </article>
-        <% }); %>
+
     </main>
 </body>
 </html>
