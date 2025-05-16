@@ -17,8 +17,33 @@
             <h1>DeclutterLy... where your things go matters.</h1>
             <h4>Mindful moves to spark joy</h4>
         </div>
-      
-    <!-- For visitors to select type of item -->  
+
+        <!-- For visitors to select type of item -->
+        <div class="declutter-form">
+        <form id="declutterForm">
+        <label for="category">Select type:</label>
+        <select id="category" name="category">
+        <option value="">--Choose--</option>
+        <option value="clothes">Clothes</option>
+        <option value="electronics">Electronics</option>
+        <option value="furniture">Furniture</option>
+        <option value="books">Books</option>
+        </select>
+        <br>
+        <label for="description">Describe item or upload image (optional):</label>
+        <textarea id="description" placeholder="Describe your item..."></textarea>
+        <input class="new-post-btn-container" type="file" accept="image/*">
+        <br>    
+        <label for="location">Where are you (optional):</label>
+        <input type="text" id="location" placeholder="Enter your location..." />
+        <button type="button" onclick="useCurrentLocation()">Use Current Location</button>
+        <br><br>
+        <button class="new-post-btn-container" type="submit">Tell me!</button>
+        </form>
+        <div/>
+
+<!-- For visitors to select type of item -->  
+  <main class="container">
     <section class="input-section">
       <h2>What would you like to declutter?</h2>
       
@@ -77,51 +102,9 @@
         </button>
       </div>
 
-
-    <!-- Recommendations -->
-  <section class="results-section" id="results-section">
-      <h2>Recommended Options</h2>
-      
-      <div class="filter-options">
-        <button class="filter-btn active" data-filter="all">All Options</button>
-        <button class="filter-btn" data-filter="repair">Repair</button>
-        <button class="filter-btn" data-filter="donate">Donate</button>
-        <button class="filter-btn" data-filter="recycle">Recycle</button>
-        <div class="sort-by">
-          <label for="sort-options">Sort by:</label>
-          <select id="sort-options">
-            <option value="distance">Distance</option>
-            <option value="carbon">Carbon Footprint</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="results-container" id="results-container">
-        <!-- Results will be populated here via JavaScript -->
-      </div>
+      <button id="submit-btn" class="submit-btn" ahref="results">Find Options</button>
     </section>
 
-    <section class="resources-section">
-      <h2>Resources</h2>
-      <div class="resource-links">
-        <a href="https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/e-waste-management" target="_blank" class="resource-link">
-          <i class="fas fa-laptop"></i>
-          <span>E-Waste Recycling (NEA)</span>
-        </a>
-        <a href="https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/waste-minimisation-and-recycling" target="_blank" class="resource-link">
-          <i class="fas fa-recycle"></i>
-          <span>Recycling Locations (NEA)</span>
-        </a>
-        <a href="https://www.giving.sg/donate" target="_blank" class="resource-link">
-          <i class="fas fa-hands-helping"></i>
-          <span>Donation Centers (Giving.sg)</span>
-        </a>
-        <a href="https://www.repair.sg/" target="_blank" class="resource-link">
-          <i class="fas fa-tools"></i>
-          <span>Repair Kopitiam</span>
-        </a>
-      </div>
-    </section>
   </main>
 
   <footer>
