@@ -101,10 +101,7 @@ result-item {
 padding: 10px 0;
 border-bottom: 1px solid #eee;
 }
-.navibar {   
-    text-align: right;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+navigator-bar {
+background-color: #219150;
+text-align: left;
 }
-
