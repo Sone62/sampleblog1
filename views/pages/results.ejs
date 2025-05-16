@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declutterly: where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <img id="banner" src="images/declutterlyheader.png" alt="banner">
+</head>
+<body>
+    <main class="container">
+<!-- Navbar which can be reused across other pages -->
+        <%- include('../partials/navbar'); %>
+
+
+        <h2>Donation Centres</h2>
+<div class="box-container">
+<% donations.forEach(loc => { %>
+<div class="output-box">
+<strong><%= loc.name || loc.organisation_name %></strong><br>
+<%= loc.address || loc.location %>
+</div>
+<% }) %>
+</div>
+
+<h2>Repair Services</h2>
+<div class="box-container">
+<% repairs.forEach(loc => { %>
+<div class="output-box">
+<strong><%= loc.name %></strong><br>
+<%= loc.address %>
+</div>
+<% }) %>
+</div>
+
+<h2>Recycling Bins</h2>
+<div class="box-container">
+<% recyclings.forEach(loc => { %>
+<div class="output-box">
+<strong><%= loc.site_name %></strong><br>
+<%= loc.address %>
+</div>
+<% }) %>
+</div>
+<!-- Footer -->  
+     <footer>
+        <p>&copy; 2025 DeclutterLY</p>
+    </footer>
+</body>
+</html>
