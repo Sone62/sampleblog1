@@ -21,7 +21,7 @@
         <!-- Form for visitors to select type of item -->
         <div class="declutter-form">
         <form id="declutterForm">
-        <label for="category">1. Select category:</label>
+        <label for="category">What category</label>
         <select id="category" name="category">
         <option value="">--Choose--</option>
         <option value="clothes">Clothes</option>
@@ -30,15 +30,15 @@
         <option value="books">Books</option>
         </select>
         <br>
-        <label for="description">Describe your item or upload and image (optional):</label>
+        <label for="description">Describe your item or upload image (optional):</label>
         <textarea id="description" placeholder="Describe your item..."></textarea>
-        <input type="file" accept="image/*">
+        <input class="new-post-btn-container" type="file" accept="image/*">
         <br>    
         <label for="location">Where are you (optional):</label>
         <input type="text" id="location" placeholder="Enter your location..." />
         <button type="button" onclick="useCurrentLocation()">Use Current Location</button>
         <br><br>
-        <button class="outline primary" type="submit">Find Option</button>
+        <button class="tell-me-btn-container" type="submit">Find Option</button>
         </form>
         <div/>
 
