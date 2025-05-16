@@ -8,6 +8,9 @@ padding: 20px;
 h1 {
 color: #07e011;
 }
+h2 {
+color: #219150;
+}
 label {
 font-weight: bold;
 }
@@ -19,8 +22,8 @@ border: 1px solid #b5ffea;
 border-radius: 4px;
 }
 button {
-background-color: #27ae60;
-color: white;
+background-color: #00a244;
+color: rgb(0, 0, 0);
 padding: 12px 20px;
 border: none;
 border-radius: 4px;
@@ -39,7 +42,7 @@ border: 1px solid #ddd;
 padding: 10px 0;
 border-bottom: 1px solid #eee;
 }
-.declutter-form {   
+.navibar {   
     text-align: left;
 
     max-width: 800px;
