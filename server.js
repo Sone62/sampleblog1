@@ -78,3 +78,23 @@ app.post('/new', async function(req, res) {
       }
 
 });
+
+// Delete a post by id
+app.post("/delete/:id", async (req, res) => {
+    const { id } = req.params;
+    
+    try {
+        await prisma.post.delete({
+            where: { id: parseInt(id) },
+        });
+      
+        // Redirect back to the homepage
+        res.redirect('/');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+  });
+
+// Tells the app which port to run on
+app.listen(8080);
