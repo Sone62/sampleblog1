@@ -59,6 +59,21 @@ app.get('/gen1', function(req, res) {
   res.render('pages/gen1');
 });
 
+// gen_donate
+app.get('/gen_donate', function(req, res) {
+  res.render('pages/gen_donate');
+});
+
+// gen_recycle
+app.get('/gen_recycle', function(req, res) {
+  res.render('pages/gen_recycle');
+});
+// gen_repair
+app.get('/gen_repair', function(req, res) {
+  res.render('pages/gen_repair');
+});
+
+
 //backend to pass data to frontent
 app.get('/channels', async (req, res) => {
   try {

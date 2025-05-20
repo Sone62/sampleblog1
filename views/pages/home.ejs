@@ -30,7 +30,7 @@
 </div>
 
 
-<!-- New Form -->  
+<!-- Form including channel search to prisma channel table -->  
 <form action="/results" method="POST" enctype="multipart/form-data" class="input-section">
   <h2>What would you like to declutter?</h2>
   <div class="input-methods">
@@ -47,14 +47,16 @@
         <option value="other">Other</option>
       </select>
     </div>
+    
     <div class="input-group">
-     <label for="channelId">Channel Item:</label>
+     <label for="channelId">Item Type:</label>
     <select id="channelId" name="channelId" required>
       <option value="">-- Select an item --</option>
       <% channels.forEach(function(channel) { %>
         <option value="<%= channel.id %>"><%= channel.Name %> - <%= channel.Type %></option>
       <% }); %>
     </select>
+
     <div class="input-group">
       <label for="item-description">Describe your item:</label>
       <textarea id="item-description" name="description" placeholder="E.g., Samsung TV from 2015, slightly broken screen"></textarea>
@@ -66,7 +68,7 @@
   </div>
   <br>
   <button type="submit" class="declutter-btn active">
-    <i class="fas fa-magic"></i> Search all <i class="fas fa-laptop"></i>
+    <i class="fas fa-magic"></i> Search <i class="fas fa-laptop"></i>
   </button>
 </form>
  
@@ -89,16 +91,16 @@
         </button>
          <button id="auto-decide" class="declutter-btn active">
           <i class="fas fa-magic"></i>
-       <a href="/gen" class="resource-link">Gen</a>
+       <a href="/gen" class="resource-link">Search Format 1</a>
           <i class="fas fa-laptop"></i>
           </button> 
               <button id="auto-decide" class="declutter-btn active">
           <i class="fas fa-magic"></i>
-       <a href="/gen1" class="resource-link">Gen1</a>
+       <a href="/gen1" class="resource-link">Search Format 2</a>
           <i class="fas fa-laptop"></i>
           </button> 
         </div>
-      
+
     </section>
 
 <!-- Footer -->  
