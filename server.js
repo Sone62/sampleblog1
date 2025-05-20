@@ -54,7 +54,7 @@ app.get('/gen', function(req, res) {
   res.render('pages/gen');
 });
 
-// gen
+// gen1
 app.get('/gen1', function(req, res) {
   res.render('pages/gen1');
 });
