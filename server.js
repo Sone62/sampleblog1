@@ -22,6 +22,10 @@ const prisma = new PrismaClient();
 // Needed for Fetch API
 const fetch = require('node-fetch');
 
+app.get('/', async function(req, res) {
+  const channels = await prisma.Channels.findMany();
+  res.render('pages/home', { channels });
+});
 
 // About page
 app.get('/about', function(req, res) {
