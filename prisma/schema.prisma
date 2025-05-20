@@ -7,7 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model Channels {
   id                Int
   X                 Float
@@ -24,8 +23,6 @@ model Channels {
   LANDYADDRESSPOINT Float
   INC_CRC           String
   FMEL_UPD_D        Float
-
-  @@ignore
 }
 
 model Post {
