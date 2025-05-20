@@ -1,22 +1,18 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>eWaste Management</title>
-    <link rel="stylesheet" href="styles.css">                   
+  <title>E-waste Collection Points</title>
 </head>
 <body>
-    import requests
-          
-dataset_id = "d_b709b4cda8fad1c65c0fd4d42e06fa2b"
-url = "https://api-open.data.gov.sg/v1/public/api/datasets/" + dataset_id + "/poll-download"
-        
-response = requests.get(url)
-json_data = response.json()
-if json_data['code'] != 0:
-    print(json_data['errMsg'])
-    exit(1)
-
-url = json_data['data']['url']
-response = requests.get(url)
-print(response.text)
+  <h1>E-waste Collection Points</h1>
+  <ul>
+    <% ewaste_points.forEach(function(point) { %>
+      <li>
+        <strong><%= point.location_name %></strong><br>
+        <%= point.address %>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/">Back to home</a>
 </body>
 </html>
