@@ -1,49 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Declutterly: where your things go matters</title>
-    <link rel="stylesheet" href="/css/style.css" >
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-RGYMZRZ03H');
-</script>
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <main class="container">
-<!-- Navbar which can be reused across other pages -->
-        <%- include('../partials/navbar'); %>
-
-<!-- Information welcoming visitors to my page -->
-        <div class="welcome-container">
-            <h1>DeclutterLy... where your things go matters.</h1>
-            <h3>Mindful moves to spark joy</h3>
-        </div>
-
-<!-- Example HTML for displaying points -->
-<ul id="ewaste-list"></ul>
-<script>
-fetch('https://data.gov.sg/api/action/datastore_search?resource_id=YOUR_RESOURCE_ID')
-  .then(res => res.json())
-  .then(data => {
-    const list = document.getElementById('ewaste-list');
-    data.result.records.forEach(item => {
-      const li = document.createElement('li');
-      li.textContent = item.location_name; // Adjust field name as needed
-      list.appendChild(li);
-    });
-  });
-</script>
-
-<!-- Footer -->  
-     <footer>
-        <p>&copy; 2025 <a href="/about"><strong>DeclutterLY</strong></a>
-    </footer>
+  <main class="container">
+    <h1>Search Results</h1>
+    <% if (results && results.length > 0) { %>
+      <ul>
+        <% results.forEach(function(result) { %>
+          <li>
+            <strong><%= result.title %></strong><br>
+            Category: <%= result.category %><br>
+            Description: <%= result.description %><br>
+            Location: <%= result.location %>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No results found.</p>
+    <% } %>
+    <a href="/">Back to Home</a>
+  </main>
 </body>
 </html>
