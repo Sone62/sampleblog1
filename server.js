@@ -51,50 +51,10 @@ app.get('/search', function(req, res) {
     res.render('pages/search');
 });
 
-// Create a new post
-app.post('/new', async function(req, res) {
-    
-    // Try-Catch for any errors
-    try {
-        // Get the title and content from submitted form
-        const { title, content } = req.body;
-
-        // Reload page if empty title or content
-        if (!title || !content) {
-            console.log("Unable to create new post, no title or content");
-            res.render('pages/new');
-        } else {
-            // Create post and store in database
-            const blog = await prisma.post.create({
-                data: { title, content },
-            });
-
-            // Redirect back to the homepage
-            res.redirect('/');
-        }
-      } catch (error) {
-        console.log(error);
-        res.render('pages/new');
-      }
-
+// Test NEW
+app.get('/search', function(req, res) {
+    res.render('pages/new');
 });
-
-// Delete a post by id
-app.post("/delete/:id", async (req, res) => {
-    const { id } = req.params;
-    
-    try {
-        await prisma.post.delete({
-            where: { id: parseInt(id) },
-        });
-      
-        // Redirect back to the homepage
-        res.redirect('/');
-    } catch (error) {
-        console.log(error);
-        res.redirect('/');
-    }
-  });
 
 // Tells the app which port to run on
 app.listen(8080);
