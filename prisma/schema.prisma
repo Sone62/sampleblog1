@@ -9,14 +9,15 @@ datasource db {
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model Channels {
-  X                 Float?
+ id                 Int       @id @default(autoincrement())              
+  X                 Float        
   Y                 Float?
-  Z                 Int?
+  Z                 Int
   Type              String?
   Name              String?
   Items             String?
-  Description       String?
-  Postal            Int?
+  Desc              String?
+  Postal            Int
   Address           String?
   Street            String?
   Building          String?
@@ -24,8 +25,6 @@ model Channels {
   LANDYADDRESSPOINT Float?
   INC_CRC           String?
   FMEL_UPD_D        Float?
-
-  @@ignore
 }
 
 model Post {
