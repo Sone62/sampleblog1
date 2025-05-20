@@ -23,12 +23,6 @@ const prisma = new PrismaClient();
 const fetch = require('node-fetch');
 
 
-// Start the server
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 // Home page
 app.get('/', async (req, res) => {
   try {
@@ -71,4 +65,10 @@ app.get('/channels', async (req, res) => {
 });
 app.post('/results', async (req, res) => {
   // handle search logic here
+});
+
+// Start the server
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
