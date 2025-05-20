@@ -86,6 +86,38 @@ app.post('/search-results', async (req, res) => {
   }
 });
 
+// Example: Search by type, location, or item
+app.post('/search-results', async (req, res) => {
+  const { type, location, item } = req.body;
+  try {
+    const results = await prisma.Channels.findMany({
+      where: {
+        AND: [
+          type ? { Type: { contains: type, mode: 'insensitive' } } : {},
+          location ? {
+            OR: [
+              { Address: { contains: location, mode: 'insensitive' } },
+              { Street: { contains: location, mode: 'insensitive' } },
+              { Building: { contains: location, mode: 'insensitive' } },
+              { PostCode: { equals: parseInt(location) || 0 } }
+            ]
+          } : {},
+          item ? {
+            OR: [
+              { Name: { contains: item, mode: 'insensitive' } },
+              { Items: { contains: item, mode: 'insensitive' } }
+            ]
+          } : {}
+        ]
+      }
+    });
+    res.render('pages/results', { results });
+  } catch (error) {
+    res.render('pages/results', { results: [] });
+  }
+});
+
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
