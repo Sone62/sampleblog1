@@ -25,7 +25,7 @@
 <a href="/results" class="back-link">Results</a>
 <a href="/codedresults" class="back-link">Coded Results</a>
 <a href="/search" class="back-link">Search</a>
-<a href="gen" class="back-link">Generated</a>
+<a href="/gen" class="back-link">Find it</a>
 
 <!-- Information welcoming visitors to my page -->
 <div class="welcome-container">
@@ -76,21 +76,7 @@
   </button>
 </form>
 
-<form action="/results" method="POST" class="input-section">
-  <h2>Select a Channel Item to Search</h2>
-  <div class="input-group">
-    <label for="channelId">Channel Item:</label>
-    <select id="channelId" name="channelId" required>
-      <option value="">-- Select an item --</option>
-      <% channels.forEach(function(channel) { %>
-        <option value="<%= channel.id %>"><%= channel.Name %> - <%= channel.Type %></option>
-      <% }); %>
-    </select>
-  </div>
-  <button type="submit" class="declutter-btn active">Search</button>
-</form>
-
-  
+ 
        <button id="repair-option" class="declutter-btn">
           <i class="fas fa-tools"></i>
           Repair
@@ -111,6 +97,19 @@
         </div>
     </section>
 
+    <form action="/results" method="POST" class="input-section">
+  <h2>Select a Channel Item to Search</h2>
+  <div class="input-group">
+    <label for="channelId">Channel Item:</label>
+    <select id="channelId" name="channelId" required>
+      <option value="">-- Select an item --</option>
+      <% channels.forEach(function(channel) { %>
+        <option value="<%= channel.id %>"><%= channel.Name %> - <%= channel.Type %></option>
+      <% }); %>
+    </select>
+  </div>
+  <button type="submit" class="declutter-btn active">Search</button>
+</form>
  
 
 <!-- Footer -->  
