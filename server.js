@@ -23,11 +23,21 @@ const prisma = new PrismaClient();
 const fetch = require('node-fetch');
 
 
-
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
+});
+
+// Home page
+app.get('/', async (req, res) => {
+  try {
+    const channels = await prisma.Channels.findMany();
+    res.render('pages/home', { channels });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/home', { channels: [] });
+  }
 });
 
 // About page
@@ -61,39 +71,4 @@ app.get('/channels', async (req, res) => {
 });
 app.post('/results', async (req, res) => {
   // handle search logic here
-});
-
-app.post('/results', async (req, res) => {
-  const { category, channelId, description, location } = req.body;
-
-  try {
-    // Build the query conditions
-    const where = {
-      AND: [
-        category ? { Type: { contains: category, mode: 'insensitive' } } : {},
-        channelId ? { id: parseInt(channelId) } : {},
-        description ? {
-          OR: [
-            { Desc: { contains: description, mode: 'insensitive' } },
-            { Items: { contains: description, mode: 'insensitive' } }
-          ]
-        } : {},
-        location ? {
-          OR: [
-            { Address: { contains: location, mode: 'insensitive' } },
-            { Building: { contains: location, mode: 'insensitive' } }
-          ]
-        } : {}
-      ]
-    };
-
-    // Query the Channels table
-    const results = await prisma.Channels.findMany({ where });
-
-    // Render the results page with the found channels
-    res.render('pages/results', { results });
-  } catch (error) {
-    console.error(error);
-    res.render('pages/results', { results: [] });
-  }
 });
