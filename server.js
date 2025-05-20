@@ -56,5 +56,16 @@ app.get('/search', function(req, res) {
     res.render('pages/new');
 });
 
+// Example: Fetch e-waste collection points from data.gov.sg API
+fetch('https://data.gov.sg/api/action/datastore_search?resource_id=7b7c1c6b-6c3c-4c7e-8e3e-2e6e6e7e7e7e')
+  .then(response => response.json())
+  .then(data => {
+    const points = data.result.records;
+    points.forEach(point => {
+      // Display or process each point
+      console.log(point);
+    });
+  });
+
 // Tells the app which port to run on
 app.listen(8080);

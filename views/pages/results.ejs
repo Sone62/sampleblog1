@@ -26,7 +26,20 @@
             <h3>Mindful moves to spark joy</h3>
         </div>
 
-<!-- For visitors to select type of item -->  
+<!-- Example HTML for displaying points -->
+<ul id="ewaste-list"></ul>
+<script>
+fetch('https://data.gov.sg/api/action/datastore_search?resource_id=YOUR_RESOURCE_ID')
+  .then(res => res.json())
+  .then(data => {
+    const list = document.getElementById('ewaste-list');
+    data.result.records.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item.location_name; // Adjust field name as needed
+      list.appendChild(li);
+    });
+  });
+</script>
 
 <!-- Footer -->  
      <footer>
