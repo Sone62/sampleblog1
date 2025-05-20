@@ -14,17 +14,17 @@
   gtag('config', 'G-RGYMZRZ03H');
 </script>
 </head>
-<body>
 
+<body>
   <header>
     <h1>Nearby Sustainability Spots</h1>
   </header>
 
   <div class="filter-buttons">
-    <button onclick="filterCards('all')">All</button>
-    <button onclick="filterCards('Recycle')">Recycle</button>
-    <button onclick="filterCards('Repair')">Repair</button>
-    <button onclick="filterCards('Donate')">Donate</button>
+    <button onclick="filterCards('all', this)" class="active">All</button>
+    <button onclick="filterCards('Recycle', this)">Recycle</button>
+    <button onclick="filterCards('Repair', this)">Repair</button>
+    <button onclick="filterCards('Donate', this)">Donate</button>
   </div>
 
   <div class="cards-container">
@@ -36,7 +36,6 @@
       <p><strong>Contact:</strong> 6634 7472</p>
       <p><strong>Distance:</strong> ~2.5 km</p>
     </div>
-
     <div class="card" data-category="Recycle">
       <h2>Greensquare - Viva Business Mall</h2>
       <p><strong>Address:</strong> 750 Chai Chee Road, Lift Lobby 1</p>
@@ -44,7 +43,6 @@
       <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/donation-resale-and-repair-channels" target="_blank">Contact Greensquare</a></p>
       <p><strong>Distance:</strong> ~10 km</p>
     </div>
-
     <div class="card" data-category="Recycle">
       <h2>Greensquare - The Green Collective at Funan</h2>
       <p><strong>Address:</strong> 107 North Bridge Road, Funan #02-18</p>
@@ -61,7 +59,6 @@
       <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/recycling-collection-points" target="_blank">Cash Converters</a></p>
       <p><strong>Distance:</strong> ~8 km</p>
     </div>
-
     <div class="card" data-category="Repair">
       <h2>PC Dreams</h2>
       <p><strong>Address:</strong> 1 Rochor Canal Road, #05-01 Sim Lim Square</p>
@@ -69,7 +66,6 @@
       <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/recycling-collection-points" target="_blank">PC Dreams</a></p>
       <p><strong>Distance:</strong> ~10 km</p>
     </div>
-
     <div class="card" data-category="Repair">
       <h2>The Salvation Army - Tanglin Donation Booth</h2>
       <p><strong>Address:</strong> 356 Tanglin Road, Singapore 247674</p>
@@ -86,7 +82,6 @@
       <p><strong>Contact:</strong> 6713 9150</p>
       <p><strong>Distance:</strong> ~1.5 km</p>
     </div>
-
     <div class="card" data-category="Donate">
       <h2>ItsRainingRaincoats</h2>
       <p><strong>Address:</strong> 470 Upper Paya Lebar Road, Singapore 534235</p>
@@ -94,7 +89,6 @@
       <p><strong>Contact:</strong> 8101 8187</p>
       <p><strong>Distance:</strong> ~3 km</p>
     </div>
-
     <div class="card" data-category="Donate">
       <h2>MINDS - Woodlands</h2>
       <p><strong>Address:</strong> 30 Woodlands Ring Road</p>
@@ -105,7 +99,12 @@
   </div>
 
   <script>
-    function filterCards(category) {
+    function filterCards(category, btn) {
+      // Remove 'active' class from all buttons
+      document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+      // Add 'active' to the clicked button
+      if(btn) btn.classList.add('active');
+      // Filter cards
       const cards = document.querySelectorAll('.card');
       cards.forEach(card => {
         if (category === 'all' || card.getAttribute('data-category') === category) {
@@ -115,6 +114,8 @@
         }
       });
     }
+    // On page load, show all cards
+    filterCards('all', document.querySelector('.filter-buttons button'));
   </script>
 
 </body>
