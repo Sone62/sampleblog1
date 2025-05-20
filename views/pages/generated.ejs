@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nearby Sustainability Spots</title>
+  <style>
+    :root {
+      --accent-green: #dbe53d;
+      --accent-pink: #c3306b;
+      --accent-purple: #900cbf;
+      --bg-light: #fbf5f5;
+      --text-dark: #423939;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    header {
+      background-color: var(--accent-green);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      color: var(--text-dark);
+    }
+
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+      gap: 1rem;
+    }
+
+    .filter-buttons button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: var(--accent-pink);
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .filter-buttons button:hover {
+      background-color: var(--accent-purple);
+    }
+
+    .cards-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .card {
+      background-color: white;
+      border: 1px solid var(--accent-green);
+      border-radius: 8px;
+      padding: 1rem;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: var(--accent-pink);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      .cards-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Nearby Sustainability Spots</h1>
+  </header>
+
+  <div class="filter-buttons">
+    <button onclick="filterCards('all')">All</button>
+    <button onclick="filterCards('Recycle')">Recycle</button>
+    <button onclick="filterCards('Repair')">Repair</button>
+    <button onclick="filterCards('Donate')">Donate</button>
+  </div>
+
+  <div class="cards-container">
+    <!-- Recycle Cards -->
+    <div class="card" data-category="Recycle">
+      <h2>H&M - NEX</h2>
+      <p><strong>Address:</strong> 23 Serangoon Central, NEX, #01-12 to #01-33</p>
+      <p><strong>Services:</strong> Accepts unwanted clothes or textiles, by any brand and in any condition. Clothes that can be reworn will be marketed as second-hand goods, while those that can't will be shredded and recycled to produce new clothes, insulation material, or cleaning cloths.</p>
+      <p><strong>Contact:</strong> 6634 7472</p>
+      <p><strong>Distance:</strong> ~2.5 km</p>
+    </div>
+
+    <div class="card" data-category="Recycle">
+      <h2>Greensquare - Viva Business Mall</h2>
+      <p><strong>Address:</strong> 750 Chai Chee Road, Lift Lobby 1</p>
+      <p><strong>Services:</strong> Provides textile recycling services to households and organizations in Singapore. They operate a free doorstep textiles recyclables collection.</p>
+      <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/donation-resale-and-repair-channels" target="_blank">Contact Greensquare</a></p>
+      <p><strong>Distance:</strong> ~10 km</p>
+    </div>
+
+    <div class="card" data-category="Recycle">
+      <h2>Greensquare - The Green Collective at Funan</h2>
+      <p><strong>Address:</strong> 107 North Bridge Road, Funan #02-18</p>
+      <p><strong>Services:</strong> Similar textile recycling services as other Greensquare locations.</p>
+      <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/donation-resale-and-repair-channels" target="_blank">Contact Greensquare</a></p>
+      <p><strong>Distance:</strong> ~11 km</p>
+    </div>
+
+    <!-- Repair Cards -->
+    <div class="card" data-category="Repair">
+      <h2>Cash Converters - Toa Payoh</h2>
+      <p><strong>Address:</strong> 520 Lorong 6 Toa Payoh, #01-51 HDB Hub</p>
+      <p><strong>Services:</strong> Buy and sell used household appliances, sporting goods, computers, cameras, TVs, musical instruments, etc.</p>
+      <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/recycling-collection-points" target="_blank">Cash Converters</a></p>
+      <p><strong>Distance:</strong> ~8 km</p>
+    </div>
+
+    <div class="card" data-category="Repair">
+      <h2>PC Dreams</h2>
+      <p><strong>Address:</strong> 1 Rochor Canal Road, #05-01 Sim Lim Square</p>
+      <p><strong>Services:</strong> Trade-in and sales of pre-owned/demo/display and refurbished laptops and other portable electronic devices such as smartphones and tablets.</p>
+      <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/3r-programmes-and-resources/recycling-collection-points" target="_blank">PC Dreams</a></p>
+      <p><strong>Distance:</strong> ~10 km</p>
+    </div>
+
+    <div class="card" data-category="Repair">
+      <h2>The Salvation Army - Tanglin Donation Booth</h2>
+      <p><strong>Address:</strong> 356 Tanglin Road, Singapore 247674</p>
+      <p><strong>Services:</strong> Accepts donations of furniture, clothing, and household goods. Items in good condition may be repaired and sold in their thrift stores.</p>
+      <p><strong>Contact:</strong> <a href="https://styledegree.sg/ultimate-list-of-places-to-donate-old-clothes-items-in-singapore/" target="_blank">The Salvation Army</a></p>
+      <p><strong>Distance:</strong> ~12 km</p>
+    </div>
+
+    <!-- Donate Cards -->
+    <div class="card" data-category="Donate">
+      <h2>The Helping Hand</h2>
+      <p><strong>Address:</strong> 819 Upper Serangoon Road, Singapore 534678</p>
+      <p><strong>Services:</strong> Accepts a range of household items – from computers to furniture and clothing.</p>
+      <p><strong>Contact:</strong> 6713 9150</p>
+      <p><strong>Distance:</strong> ~1.5 km</p>
+    </div>
+
+    <div class="card" data-category="Donate">
+      <h2>ItsRainingRaincoats</h2>
+      <p><strong>Address:</strong> 470 Upper Paya Lebar Road, Singapore 534235</p>
+      <p><strong>Services:</strong> Accepts men’s apparel in pristine condition for migrant workers.</p>
+      <p><strong>Contact:</strong> 8101 8187</p>
+      <p><strong>Distance:</strong> ~3 km</p>
+    </div>
+
+    <div class="card" data-category="Donate">
+      <h2>MINDS - Woodlands</h2>
+      <p><strong>Address:</strong> 30 Woodlands Ring Road</p>
+      <p><strong>Services:</strong> Donations will provide for the daily operations of MINDS centres, schools, and residential homes.</p>
+      <p><strong>Contact:</strong> 6366 3966</p>
+      <p><strong>Distance:</strong> ~15 km</p>
+    </div>
+  </div>
+
+  <script>
+    function filterCards(category) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
