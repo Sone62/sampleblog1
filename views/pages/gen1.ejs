@@ -14,9 +14,12 @@
   gtag('config', 'G-RGYMZRZ03H');
 </script>
 <body>
+<main class="container">
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
 
     <header>
-        <h1>Nearby Sustainability Spots</h1>
+        <h1>Nearby Spots</h1>
     <div class="filter-buttons">
     <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
     <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
