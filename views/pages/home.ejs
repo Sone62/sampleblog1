@@ -58,6 +58,19 @@
   </button>
 </form>
 
+<form action="/results" method="POST" class="input-section">
+  <h2>Select a Channel Item to Search</h2>
+  <div class="input-group">
+    <label for="channelId">Channel Item:</label>
+    <select id="channelId" name="channelId" required>
+      <option value="">-- Select an item --</option>
+      <% channels.forEach(function(channel) { %>
+        <option value="<%= channel.id %>"><%= channel.Name %> - <%= channel.Type %></option>
+      <% }); %>
+    </select>
+  </div>
+  <button type="submit" class="declutter-btn active">Search</button>
+</form>
 <a href="/channels">Channels</a>
 
 <!-- OLD For visitors to select type of item -->  

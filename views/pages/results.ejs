@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>Search Results</title>
@@ -11,10 +10,11 @@
       <ul>
         <% results.forEach(function(result) { %>
           <li>
-            <strong><%= result.title %></strong><br>
-            Category: <%= result.category %><br>
-            Description: <%= result.description %><br>
-            Location: <%= result.location %>
+            <strong>Name:</strong> <%= result.Name %><br>
+            <strong>Type:</strong> <%= result.Type %><br>
+            <strong>Description:</strong> <%= result.Description %><br>
+            <strong>Address:</strong> <%= result.Address %><br>
+            <!-- Add more fields as needed -->
           </li>
         <% }); %>
       </ul>
