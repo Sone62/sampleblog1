@@ -17,13 +17,12 @@
 
     <header>
         <h1>Nearby Sustainability Spots</h1>
-        <div class="filters">
-            <button onclick="filterSpots('all')">All</button>
-            <button onclick="filterSpots('recycle')">Recycle</button>
-            <button onclick="filterSpots('repair')">Repair</button>
-            <button onclick="filterSpots('donate')">Donate</button>
-            <button onclick="sortByDistance()">Sort by Distance</button>
-        </div>
+    <div class="filter-buttons">
+    <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+    </div>
     </header>
 
     <main id="spots-container">
