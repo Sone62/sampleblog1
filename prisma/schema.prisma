@@ -11,20 +11,20 @@ datasource db {
 model Channels {
  id                 Int       @id @default(autoincrement())              
   X                 Float        
-  Y                 Float?
+  Y                 Float
   Z                 Int
-  Type              String?
-  Name              String?
-  Items             String?
-  Desc              String?
-  Postal            Int
-  Address           String?
-  Street            String?
-  Building          String?
-  LANDXADDRESSPOINT Float?
-  LANDYADDRESSPOINT Float?
-  INC_CRC           String?
-  FMEL_UPD_D        Float?
+  Type              String
+  Name              String
+  Items             String
+  Desc              String
+  PostCode          Int
+  Address           String
+  Street            String
+  Building          String
+  LANDXADDRESSPOINT Float
+  LANDYADDRESSPOINT Float
+  INC_CRC           String
+  FMEL_UPD_D        Float
 }
 
 model Post {
