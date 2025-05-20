@@ -59,7 +59,7 @@ app.get('/gen1', function(req, res) {
   res.render('pages/gen1');
 });
 
-
+//backend to pass data to frontent
 app.get('/channels', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany();
@@ -69,6 +69,7 @@ app.get('/channels', async (req, res) => {
     res.render('pages/channels', { channels: [] });
   }
 });
+
 app.post('/results', async (req, res) => {
   // handle search logic here
 });
