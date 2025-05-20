@@ -60,27 +60,15 @@ app.get('/results', function(req, res) {
     res.render('pages/results');
 });
 
-
-// Example: Fetch e-waste collection points from data.gov.sg API
-fetch('https://data.gov.sg/api/action/datastore_search?resource_id=7b7c1c6b-6c3c-4c7e-8e3e-2e6e6e7e7e7e')
-  .then(response => response.json())
-  .then(data => {
-    const points = data.result.records;
-    points.forEach(point => {
-      // Display or process each point
-      console.log(point);
-    });
-  });
-
-
+//ewaste route
 app.get('/ewaste', async (req, res) => {
-  const fetch = require('node-fetch');
   const url = 'https://data.gov.sg/api/action/datastore_search?resource_id=7b7c1c6b-6c3c-4c7e-8e3e-2e6e6e7e7e7e';
   const response = await fetch(url);
   const data = await response.json();
   const ewaste_points = data.result.records;
   res.render('pages/ewaste', { ewaste_points });
 });
-
-// Tells the app which port to run on
-app.listen(8080);
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
