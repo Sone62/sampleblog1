@@ -89,7 +89,7 @@
     <label for="channelId">Channel Item:</label>
     <select id="channelId" name="channelId" required>
       <option value="">-- Select an item --</option>
-      <% channels.forEach(function(channel) { %>
+      <% channels.forEach(function(Channels) { %>
         <option value="<%= channel.id %>"><%= channel.Name %> - <%= channel.Type %></option>
       <% }); %>
     </select>
