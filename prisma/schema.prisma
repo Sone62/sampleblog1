@@ -9,21 +9,21 @@ datasource db {
 
 /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
 model Channels {
-  id                Int?
-  X                 Float?
-  Y                 Float?
-  Z                 Int?
-  Type              String?
-  Name              String?
-  Items             String?
-  Desc              String?
-  Postcode          Int?
-  Address           String?
-  Building          String?
-  LANDXADDRESSPOINT Float?
-  LANDYADDRESSPOINT Float?
-  INC_CRC           String?
-  FMEL_UPD_D        Float?
+  id                Int
+  X                 Float
+  Y                 Float
+  Z                 Int
+  Type              String
+  Name              String
+  Items             String
+  Desc              String
+  Postcode          Int
+  Address           String
+  Building          String
+  LANDXADDRESSPOINT Float
+  LANDYADDRESSPOINT Float
+  INC_CRC           String
+  FMEL_UPD_D        Float
 
   @@ignore
 }
