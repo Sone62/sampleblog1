@@ -22,27 +22,6 @@ const prisma = new PrismaClient();
 // Needed for Fetch API
 const fetch = require('node-fetch');
 
-// Main landing page
-app.get('/', async function(req, res) {
-
-    // Try-Catch for any errors
-    try {
-        // Get all blog posts
-        const blogs = await prisma.post.findMany({
-                orderBy: [
-                  {
-                    id: 'desc'
-                  }
-                ]
-        });
-
-        // Render the homepage with all the blog posts
-        await res.render('pages/home', { blogs: blogs });
-      } catch (error) {
-        res.render('pages/home');
-        console.log(error);
-      } 
-});
 
 // About page
 app.get('/about', function(req, res) {
@@ -68,15 +47,7 @@ app.get('/channels', async (req, res) => {
     res.render('pages/channels', { channels: [] });
   }
 });
-//update to pass channel to home page
-app.get('/', async function(req, res) {
-  try {
-    const channels = await prisma.Channels.findMany();
-    res.render('pages/home', { channels });
-  } catch (error) {
-    res.render('pages/home', { channels: [] });
-  }
-});
+
 
 // Handle form submission
 app.post('/results', async (req, res) => {
@@ -89,6 +60,16 @@ app.post('/results', async (req, res) => {
     res.render('pages/results', { results: channel ? [channel] : [] });
   } catch (error) {
     res.render('pages/results', { results: [] });
+  }
+});
+
+//update to pass channel to home page
+app.get('/', async function(req, res) {
+  try {
+    const channels = await prisma.Channels.findMany();
+    res.render('pages/home', { channels });
+  } catch (error) {
+    res.render('pages/home', { channels: [] });
   }
 });
 
