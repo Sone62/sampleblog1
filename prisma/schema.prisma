@@ -12,17 +12,18 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-// Channels model represents results
-model Channels {
-  X         float
-  Y         float
-  Z         int
-  Type      text
-  Name      text
-  Items     text 
-  Desc      text
+// channels model represents results
+model channels {
+  id        Int       @id @default(autoincrement())
+  X         Float
+  Y         Float
+  Z         Int
+  Type      String
+  Name      String
+  Items     String
+  Desc      String
   Postcode  Int
-  Address   text
+  Address   String
 }
 
 // Post model represents individual blog posts
