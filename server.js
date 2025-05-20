@@ -72,6 +72,19 @@ app.get('/', async function(req, res) {
     res.render('pages/home', { channels: [] });
   }
 });
+//Route to handle search form submission
+app.post('/search-results', async (req, res) => {
+  const { type } = req.body;
+  try {
+    const results = await prisma.Channels.findMany({
+      where: { Type: type }
+    });
+    res.render('pages/results', { results });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/results', { results: [] });
+  }
+});
 
 // Start the server
 const PORT = process.env.PORT || 8080;

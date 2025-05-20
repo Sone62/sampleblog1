@@ -4,23 +4,27 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+
+  <!-- new form select type search results -->
   <main class="container">
     <h1>Search Results</h1>
-    <% if (results && results.length > 0) { %>
-      <ul>
-        <% results.forEach(function(result) { %>
-          <li>
-            <strong>Name:</strong> <%= result.Name %><br>
-            <strong>Type:</strong> <%= result.Type %><br>
-            <strong>Description:</strong> <%= result.Description %><br>
-            <strong>Address:</strong> <%= result.Address %><br>
-            <!-- Add more fields as needed -->
-          </li>
-        <% }); %>
-      </ul>
-    <% } else { %>
-      <p>No results found.</p>
-    <% } %>
+
+<% if (results && results.length > 0) { %>
+  <ul>
+    <% results.forEach(function(result) { %>
+      <li>
+        <strong>Name:</strong> <%= result.Name %><br>
+        <strong>Type:</strong> <%= result.Type %><br>
+        <strong>Description:</strong> <%= result.Desc %><br>
+        <strong>Address:</strong> <%= result.Address %><br>
+      </li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <p>No results found.</p>
+<% } %>
+
+
     <a href="/">Back to Home</a>
   </main>
 </body>
