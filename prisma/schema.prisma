@@ -14,10 +14,16 @@ datasource db {
 }
 // Channels model represents results
 model Channels {
-  id        Int       @id @default(autoincrement())
-  Name      String
-  Type      String
+  X         float
+  Y         float
+  Z         int
+  Type      text
+  Name      text
+  Items     text 
+  Desc      text
   Postcode  Int
+  Address   text
+}
 
 // Post model represents individual blog posts
 model Post {
