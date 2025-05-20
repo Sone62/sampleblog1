@@ -61,7 +61,7 @@ app.get('/results', function(req, res) {
 
 app.get('/channels', async (req, res) => {
   try {
-    const channels = await prisma.channels.findMany(); // Adjust model name if needed
+    const channels = await prisma.Channels.findMany(); // Capital 'C'
     res.render('pages/channels', { channels });
   } catch (error) {
     console.error(error);
