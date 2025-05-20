@@ -55,7 +55,7 @@ app.get('/search', function(req, res) {
 });
 
 
-// Test RESULTS
+// results
 app.get('/results', function(req, res) {
     res.render('pages/results');
 });
@@ -81,6 +81,18 @@ app.post('/results', async (req, res) => {
     res.render('pages/results', { results: [] });
   }
 });
+
+
+app.get('/channels', async (req, res) => {
+  try {
+    const channels = await prisma.channels.findMany(); // Adjust model name if needed
+    res.render('pages/channels', { channels });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/channels', { channels: [] });
+  }
+});
+
 
 
 //ewaste route

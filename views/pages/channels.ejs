@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Channels</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Channels</h1>
+    <% if (channels && channels.length > 0) { %>
+      <ul>
+        <% channels.forEach(function(channel) { %>
+          <li>
+            <strong><%= channel.name %></strong><br>
+            ID: <%= channel.id %><br>
+            <!-- Add more fields as needed -->
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No channels found.</p>
+    <% } %>
+    <a href="/">Back to Home</a>
+  </main>
+</body>
+</html>
