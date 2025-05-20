@@ -21,10 +21,6 @@ model Channels {
   Address           String
   Street            String
   Building          String
-  LANDXADDRESSPOINT Float
-  LANDYADDRESSPOINT Float
-  INC_CRC           String
-  FMEL_UPD_D        Float
 }
 
 model Post {
