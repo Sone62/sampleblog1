@@ -46,9 +46,9 @@ app.get('/about', function(req, res) {
     res.render('pages/about');
 });
 
-// New post page
-app.get('/new', function(req, res) {
-    res.render('pages/new');
+// Search
+app.get('/search', function(req, res) {
+    res.render('pages/search');
 });
 
 // Create a new post
