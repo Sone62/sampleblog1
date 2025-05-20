@@ -45,10 +45,11 @@ app.get('/results', function(req, res) {
     res.render('pages/results');
 });
 
-// results
+// gen
 app.get('/gen', function(req, res) {
     res.render('pages/gen');
 });
+
 app.get('/channels', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany(); // Capital 'C'
