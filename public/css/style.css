@@ -95,8 +95,8 @@ button:hover {
 background-color: #54ff9b;
 }
 
-navbar {
-background-color: #ffffff;
+.navbar {
+background-color: #000000;
 text-align: right;
 width: 800px;
 max-height: 20px;
