@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Results | DeclutterLY.space</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <%- include('../partials/navbar'); %>
+    <h1>Top 10 Results Near Hougang</h1>
+
+    <% if (item) { %>
+      <p><strong>Searched Item:</strong> <%= item %></p>
+    <% } %>
+
+    <% if (results && results.length > 0) { %>
+      <ul>
+        <% results.forEach(function(result, idx) { %>
+          <li>
+            <strong><%= idx + 1 %>. <%= result.Name %></strong><br>
+            <strong>Type:</strong> <%= result.Type %><br>
+            <strong>Items:</strong> <%= result.Items %><br>
+            <strong>Description:</strong> <%= result.Desc %><br>
+            <strong>Address:</strong> <%= result.Address %><br>
+            <strong>Postcode:</strong> <%= result.Postcode %><br>
+            <% if (result.DistanceFromHougang !== undefined) { %>
+              <strong>Distance from Hougang:</strong> <%= result.DistanceFromHougang %> km<br>
+            <% } %>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>No results found for your search.</p>
+    <% } %>
+    
+<div id="map" style="height: 500px;"></div>
+<script>
+  var map = L.map('map').setView([1.35, 103.82], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+  <% channels.forEach(channel => { %>
+    L.marker([<%= channel.y %>, <%= channel.x %>]).addTo(map)
+      .bindPopup("<b><%= channel.name %></b><br><%= channel.address %>");
+  <% }); %>
+</script>
+
+
+
+  </main>
+</body>
+</html>

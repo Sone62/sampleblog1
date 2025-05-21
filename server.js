@@ -128,38 +128,69 @@ app.get('/channels', async (req, res) => {
 // Show matching channels based on estate and category
 app.get('/results', async (req, res) => {
   const { estate, category } = req.query;
-  const channels = await prisma.channel.findMany({
-    where: {
-      estateCode: parseInt(estate),
-      items: {
-        contains: category, // crude match; better with full-text search
-        mode: 'insensitive'
-      }
-    }
-  });
-  res.render('results.ejs', { channels });
-});
-
-// Show matching channels based on items and distance from hougang
-app.post('/resultshg', async (req, res) => {
-  const { item } = req.body;
   try {
-    const results = await prisma.Channels.findMany({
+    const channels = await prisma.Channels.findMany({
       where: {
-        Items: { contains: item, mode: 'insensitive' }
+        Estatecode: parseInt(estate),
+        Items: {
+          contains: category,
+          mode: 'insensitive',
+        },
       },
-      orderBy: {
-        DistanceFromHougang: 'asc'
-      },
-      take: 10
     });
-    res.render('pages/resultshg, { results, item });
+    res.render('pages/results', { channels });
   } catch (error) {
     console.error(error);
-    res.render('pages/resultshg', { results: [], item });
+    res.render('pages/results', { channels: [] });
   }
 });
 
+// Show matching channels based on items and distance from hougang
+const express = require('express');
+const app = express();
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+const bodyParser = require('body-parser');
+
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Home page
+app.get('/', (req, res) => {
+  res.render('home');
+});
+
+// POST handler for filtering
+app.post('/results', async (req, res) => {
+  const [estate, estateCode] = req.body.location.split('|');
+  const category = req.body.category;
+
+  try {
+    const channels = await prisma.Channels.findMany({
+      where: {
+        Estatecode: parseInt(estateCode),
+        Items: {
+          contains: category,
+          mode: 'insensitive',
+        },
+      },
+    });
+    res.render('pages/results', { channels });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/results', { channels: [] });
+  }
+});
+
+// Start
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Server running');
+});
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
