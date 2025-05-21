@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Channels {
-  id                Int
+  id                Int       @id @default(autoincrement())
   X                 Float
   Y                 Float
   Z                 Int
@@ -19,8 +19,6 @@ model Channels {
   Postcode          Int
   Address           String
   Building          String
-  LANDXADDRESSPOINT Float
-  LANDYADDRESSPOINT Float
   INC_CRC           String
   FMEL_UPD_D        Float
 }

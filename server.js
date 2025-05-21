@@ -82,7 +82,7 @@ app.get('/imagelibrary', function(req, res) {
 //backend to pass data to frontend
 app.get('/channels', async (req, res) => {
   try {
-    const channels = await prisma.Channels.findMany();
+    const channels = await prisma.channels.findMany();
     console.log("test",channels);
     res.render('pages/channels', { channels });
   } catch (error) {
