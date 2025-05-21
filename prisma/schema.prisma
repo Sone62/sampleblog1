@@ -7,16 +7,17 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Channel {
-  id         Int     @id @default(autoincrement())
-  type       String
-  name       String
-  items      String
-  desc       String
-  postcode   Int
-  estateCode Int
-  address    String
-  building   String
-  x          Float
-  y          Float
+model Channels { 
+id          Int @id @default(autoincrement()) 
+X           Float 
+Y           Float 
+Z           Int 
+Type        String 
+Name        String 
+Items       String 
+Desc        String 
+Postcode    Int
+Estatecode  Int
+Address     String 
+Building    String
 }

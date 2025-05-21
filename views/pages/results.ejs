@@ -33,8 +33,20 @@
     <% } else { %>
       <p>No results found for your search.</p>
     <% } %>
+    
+<div id="map" style="height: 500px;"></div>
+<script>
+  var map = L.map('map').setView([1.35, 103.82], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-    <a href="/" class="back-link">Back to Home</a>
+  <% channels.forEach(channel => { %>
+    L.marker([<%= channel.y %>, <%= channel.x %>]).addTo(map)
+      .bindPopup("<b><%= channel.name %></b><br><%= channel.address %>");
+  <% }); %>
+</script>
+
+
+
   </main>
 </body>
 </html>
