@@ -20,9 +20,14 @@
 <!-- Navbar which can be reused across other pages -->
 <%- include('../partials/navbar'); %>
 <a href="/" class="back-link">Back to Home</a>
-<a href="/channels" class="back-link">channels</a>
-<a href="/gen" class="back-link">Search</a>
+<a href="/channels" class="back-link">Channels</a>
+<a href="/search" class="back-link">Search</a>
+<a href="/results" class="back-link">Results</a>
+<a href="/carbon" class="back-link">Results</a>
+<br
 <img class="banner-img" src="/images/main.jpg" alt="where your things go matters">
+<br>
+
 <!-- Information welcoming visitors to my page -->
 <div class="welcome-container">
 <h1>DeclutterLY... where your things go matters.</h1>
@@ -47,14 +52,6 @@
       </select>
     </div>
 
-    <div class="input-group">
-     <label for="channelId">Item Type:</label>
-    <select id="channelId" name="channelId" required>
-      <option value="">-- Select an item --</option>
-      <% channels.forEach(function(channel) { %>
-        <option value="<%= channel.id %>"><%= channel.Name %> - <%= channel.Type %></option>
-      <% }); %>
-    </select>
 
  <div class="input-group">
   <label for="type">Method:</label>

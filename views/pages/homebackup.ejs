@@ -25,7 +25,34 @@
 <h1>DeclutterLY... where your things go matters.</h1>
 </div>
 
-<!-- new form select type 2-->
+<!-- Dropdown menu that calls out all types by name and type -->
+    <div class="input-group">
+     <label for="channelId">Item Type:</label>
+    <select id="channelId" name="channelId" required>
+      <option value="">-- Select an item --</option>
+      <% channels.forEach(function(channel) { %>
+        <option value="<%= channel.id %>"><%= channel.Name %> - <%= channel.Type %></option>
+      <% }); %>
+    </select>
+
+  <!-- Dropdown menu that calls out type uniqely -->  
+<div class="input-group">
+  <label for="type">Method:</label>
+  <select id="type" name="type" required>
+    <option value="">-- Select your preferred way --</option>
+    <% 
+      // Collect unique types
+      const types = [];
+      channels.forEach(function(channel) {
+        if (channel.Type && !types.includes(channel.Type)) types.push(channel.Type);
+      });
+      types.forEach(function(type) { 
+    %>
+      <option value="<%= type %>"><%= type %></option>
+    <% }); %>
+  </select>
+</div>
+
 
 <!-- new form select type -->
 <form action="/search-results" method="POST" class="input-section">
