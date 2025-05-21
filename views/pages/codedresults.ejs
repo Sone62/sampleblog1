@@ -17,8 +17,10 @@
 
 <body>
   <main class="container">
-    <%- include('../partials/navbar'); %>
-    <h1>Search Results</h1>
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
+    <h1>Results</h1>
+
 
     <% if (results && results.length > 0) { %>
       <ul class="results-list">

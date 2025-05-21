@@ -74,7 +74,7 @@ app.get('/gen_repair', function(req, res) {
 });
 
 
-//backend to pass data to frontent
+//backend to pass data to frontend
 app.get('/channels', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany();
