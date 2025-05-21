@@ -102,6 +102,18 @@ app.post('/results', async (req, res) => {
   }
 });
 
+app.post('/results', async (req, res) => {
+  const { type } = req.body;
+  try {
+    const results = await prisma.Channels.findMany({
+      where: { Type: type }
+    });
+    res.render('pages/results', { results });
+  } catch (error) {
+    res.render('pages/results', { results: [] });
+  }
+});
+
 // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {

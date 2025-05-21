@@ -1,7 +1,7 @@
 body {
 font-family: Arial, sans-serif;
 background-color: #ffffff;
-max-width: 800px;
+max-width: 100%;
 margin: auto;
 padding: 20px;
 }
@@ -51,7 +51,7 @@ a:hover {
 }
 
 .banner-img {
-  width: 100%;
+  max-width: 800px; /* Optional: limit max width */
   height: auto;     /* Maintains aspect ratio */
   display: block;
   margin: 0 auto;   /* Center the image */
@@ -138,26 +138,4 @@ padding: 16px;
 width: 320px;
 min-width: 220px;
 }
-
-/* Layout Structure */
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 100%;
-    margin: auto;
-}
-
-/* Channels Card Styling */
-.channel-card {
-    background: #f8f9fa;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.channel-card:hover {
-    transform: scale(1.02);
-}
+   
