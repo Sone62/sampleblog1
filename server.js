@@ -91,15 +91,13 @@ app.get('/channels', async (req, res) => {
 
 //Show matching channels in results
 app.post('/results', async (req, res) => {
-  const { type } = req.body;
-  try {
-    const results = await prisma.Channels.findMany({
-      where: { Type: type }
-    });
-    res.render('pages/results', { results });
-  } catch (error) {
-    res.render('pages/results', { results: [] });
-  }
+  const { item, type, postcode } = req.body;
+  let where = {};
+  if (item) where.Items = item;
+  if (type) where.Type = type;
+  if (postcode) where.Postcode = parseInt(postcode);
+  const results = await prisma.Channels.findMany({ where });
+  res.render('pages/results', { results, item, type, postcode });
 });
 
 // Start the server

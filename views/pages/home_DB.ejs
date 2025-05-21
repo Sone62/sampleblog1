@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+<main class="container">
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
+<img class="banner-img" src="/images/main1.jpg" alt="where your things go matters">
+<br>
+
+<!-- Information welcoming visitors to my page -->
+<div class="welcome-container">
+<h4>Seeking to declutter? Where your things go matters.
+  Explore your options for what to do with your items, from large appliannces to small gadgest or old batteries,
+  be it to recycle, repair or donate"
+</h4>
+
+<!-- Form including channel search to prisma channel table -->  
+<form action="/results" method="POST" enctype="multipart/form-data" class="input-section">
+ <div class="input-group">
+
+  <!-- Item Dropdown -->
+<label for="item">Item</label>
+<select id="item" name="item" required>
+  <option value="">-- Select your item --</option>
+  <% 
+    const items = [];
+    channels.forEach(function(channel) {
+      if (channel.Items && !items.includes(channel.Items)) items.push(channel.Items);
+    });
+    items.forEach(function(item) { 
+  %>
+    <option value="<%= item %>"><%= item %></option>
+  <% }); %>
+</select>
+
+<!-- Type Dropdown -->
+<label for="type">Method:</label>
+<select id="type" name="type" required>
+  <option value="">-- Select your preferred way --</option>
+  <% 
+    const types = [];
+    channels.forEach(function(channel) {
+      if (channel.Type && !types.includes(channel.Type)) types.push(channel.Type);
+    });
+    types.forEach(function(type) { 
+  %>
+    <option value="<%= type %>"><%= type %></option>
+  <% }); %>
+</select>
+
+<!-- Postcode Dropdown -->
+<label for="postcode">Location:</label>
+<select id="postcode" name="postcode" required>
+  <option value="">-- Select first two digits of your postal code --</option>
+  <% 
+    const postcodes = [];
+    channels.forEach(function(channel) {
+      if (channel.Postcode && !postcodes.includes(channel.Postcode)) postcodes.push(channel.Postcode);
+    });
+    postcodes.forEach(function(postcode) { 
+  %>
+    <option value="<%= postcode %>"><%= postcode %></option>
+  <% }); %>
+</select>
+</div>
+  <button type="submit" class="declutter-btn active">
+    <i class="fas fa-magic"></i> Search <i class="fas fa-laptop"></i>
+  </button>
+</form>
+ 
+    </section>
+
+<!-- Footer -->  
+     <footer>
+        <p>&copy; 2025 <a href="/about"><strong>DeclutterLY.space</strong></a>
+    </footer>
+</body>
+</html>
