@@ -25,6 +25,7 @@
     </ul>
   <% } %>
 
+  <% if (channels.length !== 0) { %>
   <script>
     const map = L.map('map').setView([1.35, 103.82], 12);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -35,5 +36,6 @@
         .bindPopup("<strong><%= channel.Name %></strong><br><%= channel.Address %>");
     <% } }); %>
   </script>
+  <% } %>
 </body>
 </html>
