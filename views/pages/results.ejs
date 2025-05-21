@@ -10,16 +10,20 @@
 <body>
   <h2>Matched Locations</h2>
 
-  <div id="map" style="height: 500px;"></div>
-  <ul>
-    <% channels.forEach(channel => { %>
-      <li>
-        <strong><%= channel.Name %></strong><br>
-        <%= channel.Address %><br>
-        <%= channel.Items %>
-      </li>
-    <% }) %>
-  </ul>
+  <% if (channels.length === 0) { %>
+    <p>No results found.</p>
+  <% } else { %>
+    <div id="map" style="height: 500px;"></div>
+    <ul>
+      <% channels.forEach(channel => { %>
+        <li>
+          <strong><%= channel.Name %></strong><br>
+          <%= channel.Address %><br>
+          <%= channel.Items %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } %>
 
   <script>
     const map = L.map('map').setView([1.35, 103.82], 12);

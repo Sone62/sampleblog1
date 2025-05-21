@@ -1,26 +1,13 @@
-// Needed for dotenv
 require("dotenv").config();
-
-// Needed for Express
-var express = require('express')
-var app = express()
-
-// Needed for EJS
-app.set('view engine', 'ejs');
-
-// Needed for public directory
-app.use(express.static(__dirname + '/public'));
-
-// Needed for parsing form data
-app.use(express.json());       
-app.use(express.urlencoded({extended: true}));
-
-// Needed for Prisma to connect to database
+const express = require('express');
+const app = express();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-// Needed for Fetch API
-const fetch = require('node-fetch');
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // Home page
 app.get('/', async (req, res) => {
@@ -163,7 +150,7 @@ app.get('/', (req, res) => {
 
 // POST handler for filtering
 app.post('/results', async (req, res) => {
-  const [estate, estateCode] = req.body.location.split('|');
+  const [estate, estateCode] = req.body.estatecode.split('|');
   const category = req.body.category;
 
   try {
@@ -183,15 +170,6 @@ app.post('/results', async (req, res) => {
   }
 });
 
-// Start
-app.listen(process.env.PORT || 3000, () => {
-  console.log('Server running');
-});
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-// Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
