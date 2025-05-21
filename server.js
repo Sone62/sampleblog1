@@ -83,7 +83,7 @@ app.get('/imagelibrary', function(req, res) {
 app.get('/channels', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany();
-    console.log(channels);
+    console.log("test",channels);
     res.render('pages/channels', { channels });
   } catch (error) {
     console.error(error);
