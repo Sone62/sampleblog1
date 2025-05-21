@@ -105,15 +105,10 @@ app.post('/results', async (req, res) => {
     res.render('pages/results', { results: [] });
   }
 });
-
 // Post results
 app.post('/results', async (req, res) => {
   // handle search logic here
 });
-
-// Test Carbon Savings API
-const carbonRoutes = require("./routes/carbon");
-app.use("/api", carbonRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 8080;
