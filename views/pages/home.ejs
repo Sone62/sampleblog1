@@ -30,26 +30,6 @@
 </h3>
 </div>
 
-<!-- Search by Item -->
-<form action="/results" method="POST" class="input-section">
-  <div class="input-group">
-    <label for="item">Search by Item:</label>
-    <select id="item" name="item" required>
-      <option value="">-- Select your item --</option>
-      <% 
-        const items = [];
-        channels.forEach(function(channel) {
-          if (channel.Items && !items.includes(channel.Items)) items.push(channel.Items);
-        });
-        items.forEach(function(item) { 
-      %>
-        <option value="<%= item %>"><%= item %></option>
-      <% }); %>
-    </select>
-  </div>
-  <button type="submit" class="declutter-btn active">Search by Item</button>
-</form>
-
 <!-- New Form -->  
 <form action="/results" method="POST" enctype="multipart/form-data" class="input-section">
   <h2>What would you like to declutter?</h2>
@@ -103,7 +83,27 @@
         <option value="Yishun|76">Yishun (76)</option>
       </select>
     </div>
+
+    <!-- Search by Item -->
+<form action="/results" method="POST" class="input-section">
+  <div class="input-group">
+    <label for="item">Search by Item:</label>
+    <select id="item" name="item" required>
+      <option value="">-- Select your item --</option>
+      <% 
+        const items = [];
+        channels.forEach(function(channel) {
+          if (channel.Items && !items.includes(channel.Items)) items.push(channel.Items);
+        });
+        items.forEach(function(item) { 
+      %>
+        <option value="<%= item %>"><%= item %></option>
+      <% }); %>
+    </select>
   </div>
+  <button type="submit" class="declutter-btn active">Search by Item</button>
+</form>
+  
   <br>
   <button type="submit" class="declutter-btn active">
     <i class="fas fa-magic"></i> <a href="/gen" class="resource-link">Search</a> <i class="fas fa-laptop"></i>
