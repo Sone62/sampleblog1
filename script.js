@@ -33,5 +33,3 @@ function sortByDistance() {
 }
 
 document.addEventListener("DOMContentLoaded", () => renderSpots());
-
-
