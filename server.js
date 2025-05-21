@@ -77,11 +77,6 @@ app.get('/imagelibrary', function(req, res) {
   res.render('pages/imagelibrary');
 });
 
-// carbon
-app.get('/carbon', function(req, res) {
-  res.render('pages/carbon');
-}
-
 //backend to pass data to frontend
 app.get('/channels', async (req, res) => {
   try {
