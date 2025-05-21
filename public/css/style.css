@@ -51,7 +51,6 @@ a:hover {
 }
 
 .banner-img {
-  width: 100%;      /* Makes the image span the container width */
   max-width: 800px; /* Optional: limit max width */
   height: auto;     /* Maintains aspect ratio */
   display: block;
