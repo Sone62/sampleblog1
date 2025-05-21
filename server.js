@@ -32,7 +32,16 @@ app.get('/', async (req, res) => {
     res.render('pages/home', { channels: [] });
   }
 });
-
+// Home page new
+app.get('/', async (req, res) => {
+  try {
+    const channels = await prisma.Channels.findMany();
+    res.render('pages/home_new', { channels });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/home_new', { channels: [] });
+  }
+});
 // about page
 app.get('/about', function(req, res) {
     res.render('pages/about');
@@ -72,9 +81,17 @@ app.get('/gen_repair', function(req, res) {
   res.render('pages/gen_repair');
 });
 
-// imagelibrary
-app.get('/imagelibrary', function(req, res) {
-  res.render('pages/imagelibrary');
+// gen_hg
+app.get('/gen_hg', function(req, res) {
+  res.render('pages/gen_hg');
+});
+// gen_recyclehg
+app.get('/gen_recyclehg', function(req, res) {
+  res.render('pages/genrecyclehg');
+});
+// gen_recyclehgbatt
+app.get('/gen_recyclehgbatt', function(req, res) {
+  res.render('pages/gen_recyclehgbatt');
 });
 
 //backend to pass data to frontend
