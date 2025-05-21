@@ -91,6 +91,19 @@ app.get('/channels', async (req, res) => {
   }
 });
 
+//Show matching channels in results
+app.post('/results', async (req, res) => {
+  const { type } = req.body;
+  try {
+    const results = await prisma.Channels.findMany({
+      where: { Type: type }
+    });
+    res.render('pages/results', { results });
+  } catch (error) {
+    res.render('pages/results', { results: [] });
+  }
+});
+
 app.post('/results', async (req, res) => {
   // handle search logic here
 });
