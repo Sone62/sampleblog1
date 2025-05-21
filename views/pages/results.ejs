@@ -13,8 +13,8 @@
   <% if (channels.length === 0) { %>
     <p>No results found.</p>
   <% } else { %>
-    <div id="map" style="height: 500px;"></div>
-    <ul>
+    <div id="map" style="height: 500px;" aria-label="Map showing matched locations"></div>
+    <ul aria-label="List of matched locations">
       <% channels.forEach(channel => { %>
         <li>
           <strong><%= channel.Name %></strong><br>
