@@ -32,7 +32,24 @@
 
 <!-- New Form -->  
 <form action="/results" method="POST" enctype="multipart/form-data" class="input-section">
-  <h2>Start exploring ways to declutter</h2>
+  <h2>What would you like to declutter?</h2>
+  <div class="input-methods">
+    <div class="input-group">
+      <label for="item-category">Choose a category:</label>
+      <select id="item-category" name="category">
+        <option value="">Select a category</option>
+        <option value="appliancesl">Appliances </option>
+        <option value ="batteries">Batteries</option>
+        <option value ="Lamps">Lamps</option>
+        <option value="ICT">ICT equipment, e.g laptops, mobile phones</option>
+        <option value="furniture">Furniture</option>
+        <option value="toys">Baby and children's items</option>
+        <option value="clothing">Clothing</option>
+        <option value="">Bags and accessories</option>
+        <option value="books">Books, Stationary</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
     
     <div class="input-group location">
       <label for="estate-location">Where are you located?</label>
@@ -67,36 +84,44 @@
       </select>
     </div>
   <br>
-  <button type="submit" class="declutter-btn active">
-    <i class="fas fa-magic"></i> <a href="/gen" class="resource-link">Search</a> <i class="fas fa-laptop"></i>
+  <button type="button" class="declutter-btn active" onclick="handleDemoRedirect()">
+    <i class="fas fa-magic"></i> Search <i class="fas fa-laptop"></i>
   </button>
 </form>
 
-    <!-- Search by Item -->
-<form action="/results" method="POST" class="input-section">
-  <div class="input-group">
-    <label for="item">(Optional) Search by Items:</label>
-    <select id="item" name="item" required>
-      <option value="">-- Select the category for your item --</option>
-      <% 
-        const items = [];
-        channels.forEach(function(channel) {
-          if (channel.Items && !items.includes(channel.Items)) items.push(channel.Items);
-        });
-        items.forEach(function(item) { 
-      %>
-        <option value="<%= item %>"><%= item %></option>
-      <% }); %>
-    </select>
-  </div>
-  <button type="submit" class="declutter-btn active">Search by Item</button>
-</form>
-  
-<br>Alternatively, refer to detailed <a href="/channels">channels</a>
-<br>
+<br>Alternatively, refer to detailed <a href="/channels">channels</a> or
+<br><a href="/homealt">detailed items</a>
+
 <!-- Footer -->  
      <footer>
         <p>&copy; 2025 <a href="/about"><strong>DeclutterLY.space</strong></a>
     </footer>
+
+<script>
+function handleDemoRedirect() {
+  const category = document.getElementById('item-category').value;
+  const location = document.getElementById('estate-location').value;
+
+  // Example 1: If Hougang is selected (any category)
+  if (location.startsWith('Hougang')) {
+    // Example 2: If category is "batteries" and Hougang is selected
+    if (category === 'batteries') {
+      window.location.href = '/gen_recyclehgbatt';
+      return;
+    }
+    // Example 3: If category is "recycle" (or similar) and Hougang is selected
+    if (category === 'recycle' || category === 'Recycle') {
+      window.location.href = '/gen_recyclehg';
+      return;
+    }
+    // Default for Hougang
+    window.location.href = '/gen_hg';
+    return;
+  }
+
+  // Default: submit the form as usual (for other locations)
+  document.querySelector('form.input-section').submit();
+}
+</script>
 </body>
 </html>
