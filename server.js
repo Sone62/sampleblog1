@@ -19,49 +19,12 @@ app.get('/', async (req, res) => {
     res.render('pages/home', { channels: [] });
   }
 });
-// Home page alt with detailed search
-app.get('/home_alt', async (req, res) => {
-  try {
-    const channels = await prisma.Channels.findMany();
-    res.render('pages/home_alt', { channels });
-  } catch (error) {
-    console.error(error);
-    res.render('pages/home_alt', { channels: [] });
-  }
-}); 
-app.get('/home_new', async (req, res) => {
-  try {
-    const channels = await prisma.Channels.findMany();
-    res.render('pages/home_new', { channels });
-  } catch (error) {
-    console.error(error);
-    res.render('pages/home_new', { channels: [] });
-  }
-});
-// Home page new
-app.get('/home_new', async (req, res) => {
-  try {
-    const channels = await prisma.Channels.findMany();
-    res.render('pages/home_new', { channels });
-  } catch (error) {
-    console.error(error);
-    res.render('pages/home_new', { channels: [] });
-  }
-});
+
 // about page
 app.get('/about', function(req, res) {
     res.render('pages/about');
 });
 
-// search
-app.get('/search', function(req, res) {
-    res.render('pages/search');
-});
-
-// results
-app.get('/results', function(req, res) {
-    res.render('pages/results');
-});
 
 // gen
 app.get('/gen', function(req, res) {
@@ -130,22 +93,6 @@ app.get('/results', async (req, res) => {
     console.error(error);
     res.render('pages/results', { channels: [] });
   }
-});
-
-// Show matching channels based on items and distance from hougang
-const express = require('express');
-const app = express();
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
-const bodyParser = require('body-parser');
-
-app.set('view engine', 'ejs');
-app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// Home page
-app.get('/', (req, res) => {
-  res.render('home');
 });
 
 // POST handler for filtering
