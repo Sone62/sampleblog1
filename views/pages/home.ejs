@@ -40,7 +40,7 @@
         <option value="">Select a category</option>
         <option value="appliancesl">Appliances </option>
         <option value ="batteries">Batteries</option>
-        <option value ="batteries">Lamps</option>
+        <option value ="Lamps">Lamps</option>
         <option value="ICT">ICT equipment, e.g laptops, mobile phones</option>
         <option value="furniture">Furniture</option>
         <option value="toys">Baby and children's items</option>
@@ -83,11 +83,17 @@
         <option value="Yishun|76">Yishun (76)</option>
       </select>
     </div>
+  <br>
+  <button type="submit" class="declutter-btn active">
+    <i class="fas fa-magic"></i> <a href="/gen" class="resource-link">Search</a> <i class="fas fa-laptop"></i>
+  </button>
+</form>
 
     <!-- Search by Item -->
+    <h4>Alternative, refer to detailed <a href="/channels">channels</a></h2>   
 <form action="/results" method="POST" class="input-section">
   <div class="input-group">
-    <label for="item">Search by Item:</label>
+    <label for="item">(Optional) Search by Item:</label>
     <select id="item" name="item" required>
       <option value="">-- Select your item --</option>
       <% 
@@ -104,12 +110,6 @@
   <button type="submit" class="declutter-btn active">Search by Item</button>
 </form>
   
-  <br>
-  <button type="submit" class="declutter-btn active">
-    <i class="fas fa-magic"></i> <a href="/gen" class="resource-link">Search</a> <i class="fas fa-laptop"></i>
-  </button>
-</form>
-
 <!-- Footer -->  
      <footer>
         <p>&copy; 2025 <a href="/about"><strong>DeclutterLY.space</strong></a>
