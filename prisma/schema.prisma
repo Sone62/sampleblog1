@@ -6,7 +6,7 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
-
+// Channels model for database
 model Channels { 
 id          Int @id @default(autoincrement()) 
 X           Float 
@@ -20,4 +20,10 @@ Postcode    Int
 Estatecode  Int
 Address     String 
 Building    String
+}
+// Post model represents individual blog posts
+model Post {
+  id        Int       @id @default(autoincrement())
+  title     String
+  content   String
 }
