@@ -138,12 +138,3 @@ padding: 16px;
 width: 320px;
 min-width: 220px;
 }
-
-/* Layout Structure */
-.container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    max-width: 100%;
-    margin: auto;
-}
