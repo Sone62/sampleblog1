@@ -35,50 +35,50 @@
 
 <form action="/results" method="POST" enctype="multipart/form-data" class="input-section">
  <div class="input-group">
-  <label for="item">Item</label>
-  <select id="item" name="item" required>
-    <option value="">-- Select your item --</option>
-    <% 
-      // Collect unique items
-      const items = [];
-      channels.forEach(function(channel) {
-        if (channel.Items && !types.includes(channel.Items)) types.push(channel.Items);
-      });
-      items.forEach(function(items) { 
-    %>
-      <option value="<%= items %>"><%= items %></option>
-    <% }); %>
-  </select>
-  
-  <label for="type">Method:</label>
-  <select id="type" name="type" required>
-    <option value="">-- Select your preferred way --</option>
-    <% 
-      // Collect unique types
-      const types = [];
-      channels.forEach(function(channel) {
-        if (channel.Type && !types.includes(channel.Type)) types.push(channel.Type);
-      });
-      types.forEach(function(type) { 
-    %>
-      <option value="<%= type %>"><%= type %></option>
-    <% }); %>
-  </select>
-  
-  <label for="postcode">Location:</label>
-  <select id="postcode" name="postcode" required>
-    <option value="">-- Select first two digits of your postal code --</option>
-    <% 
-      // Collect unique postcode
-      const postcode = [];
-      channels.forEach(function(postcode) {
-        if (channel.Postcode && !types.includes(channel.Postcode)) types.push(channel.Postcode);
-      });
-      types.forEach(function(type) { 
-    %>
-      <option value="<%= type %>"><%= type %></option>
-    <% }); %>
-  </select>
+  <!-- Item Dropdown -->
+<label for="item">Item</label>
+<select id="item" name="item" required>
+  <option value="">-- Select your item --</option>
+  <% 
+    const items = [];
+    channels.forEach(function(channel) {
+      if (channel.Items && !items.includes(channel.Items)) items.push(channel.Items);
+    });
+    items.forEach(function(item) { 
+  %>
+    <option value="<%= item %>"><%= item %></option>
+  <% }); %>
+</select>
+
+<!-- Type Dropdown -->
+<label for="type">Method:</label>
+<select id="type" name="type" required>
+  <option value="">-- Select your preferred way --</option>
+  <% 
+    const types = [];
+    channels.forEach(function(channel) {
+      if (channel.Type && !types.includes(channel.Type)) types.push(channel.Type);
+    });
+    types.forEach(function(type) { 
+  %>
+    <option value="<%= type %>"><%= type %></option>
+  <% }); %>
+</select>
+
+<!-- Postcode Dropdown -->
+<label for="postcode">Location:</label>
+<select id="postcode" name="postcode" required>
+  <option value="">-- Select first two digits of your postal code --</option>
+  <% 
+    const postcodes = [];
+    channels.forEach(function(channel) {
+      if (channel.Postcode && !postcodes.includes(channel.Postcode)) postcodes.push(channel.Postcode);
+    });
+    postcodes.forEach(function(postcode) { 
+  %>
+    <option value="<%= postcode %>"><%= postcode %></option>
+  <% }); %>
+</select>
 </div>
   <button type="submit" class="declutter-btn active">
     <i class="fas fa-magic"></i> Search <i class="fas fa-laptop"></i>
