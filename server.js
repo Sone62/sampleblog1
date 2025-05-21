@@ -72,11 +72,6 @@ app.get('/gen_repair', function(req, res) {
   res.render('pages/gen_repair');
 });
 
-// carbon
-app.get('/carbon', function(req, res) {
-  res.render('pages/carbon');
-});
-
 // imagelibrary
 app.get('/imagelibrary', function(req, res) {
   res.render('pages/imagelibrary');
