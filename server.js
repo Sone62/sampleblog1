@@ -32,8 +32,27 @@ app.get('/', async (req, res) => {
     res.render('pages/home', { channels: [] });
   }
 });
+// Home page alt with detailed search
+app.get('/home_alt', async (req, res) => {
+  try {
+    const channels = await prisma.Channels.findMany();
+    res.render('pages/home_alt', { channels });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/home_alt', { channels: [] });
+  }
+}); 
+app.get('/home_new', async (req, res) => {
+  try {
+    const channels = await prisma.Channels.findMany();
+    res.render('pages/home_new', { channels });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/home_new', { channels: [] });
+  }
+});
 // Home page new
-app.get('/', async (req, res) => {
+app.get('/home_new', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany();
     res.render('pages/home_new', { channels });
