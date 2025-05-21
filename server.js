@@ -125,8 +125,23 @@ app.get('/channels', async (req, res) => {
   }
 });
 
-// Show matching channels in results
-app.post('/results', async (req, res) => {
+// Show matching channels based on estate and category
+app.get('/results', async (req, res) => {
+  const { estate, category } = req.query;
+  const channels = await prisma.channel.findMany({
+    where: {
+      estateCode: parseInt(estate),
+      items: {
+        contains: category, // crude match; better with full-text search
+        mode: 'insensitive'
+      }
+    }
+  });
+  res.render('results.ejs', { channels });
+});
+
+// Show matching channels based on items and distance from hougang
+app.post('/resultshg', async (req, res) => {
   const { item } = req.body;
   try {
     const results = await prisma.Channels.findMany({
@@ -138,10 +153,10 @@ app.post('/results', async (req, res) => {
       },
       take: 10
     });
-    res.render('pages/results', { results, item });
+    res.render('pages/resultshg, { results, item });
   } catch (error) {
     console.error(error);
-    res.render('pages/results', { results: [], item });
+    res.render('pages/resultshg', { results: [], item });
   }
 });
 
