@@ -22,7 +22,6 @@ const prisma = new PrismaClient();
 // Needed for Fetch API
 const fetch = require('node-fetch');
 
-
 // Home page
 app.get('/', async (req, res) => {
   try {
