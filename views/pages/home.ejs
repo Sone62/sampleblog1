@@ -67,18 +67,43 @@
         <option value="other">Other</option>
       </select>
     </div>
-    <div class="input-group">
-      <label for="item-description">Describe your item:</label>
-      <textarea id="item-description" name="description" placeholder="E.g., Samsung TV from 2015, slightly broken screen"></textarea>
-    </div>
+    
     <div class="input-group location">
-      <label for="user-location">Your location in Singapore:</label>
-      <input type="text" id="user-location" name="location" placeholder="E.g., Tampines, Jurong East">
+      <label for="estate-location">Where are you located?</label>
+      <select id="estate-location" name="location" required>
+        <option value="">Select a housing estate</option>
+        <option value="Ang Mo Kio|56">Ang Mo Kio (56)</option>
+        <option value="Bedok|46">Bedok (46)</option>
+        <option value="Bishan|57">Bishan (57)</option>
+        <option value="Bukit Batok|65">Bukit Batok (65)</option>
+        <option value="Bukit Merah|15">Bukit Merah (15)</option>
+        <option value="Bukit Panjang|67">Bukit Panjang (67)</option>
+        <option value="Bukit Timah|58">Bukit Timah (58)</option>
+        <option value="Central Area|01">Central Area (01)</option>
+        <option value="Choa Chu Kang|68">Choa Chu Kang (68)</option>
+        <option value="Clementi|12">Clementi (12)</option>
+        <option value="Geylang|38">Geylang (38)</option>
+        <option value="Hougang|53">Hougang (53)</option>
+        <option value="Jurong East|60">Jurong East (60)</option>
+        <option value="Jurong West|64">Jurong West (64)</option>
+        <option value="Kallang/Whampoa|32">Kallang/Whampoa (32)</option>
+        <option value="Marine Parade|44">Marine Parade (44)</option>
+        <option value="Pasir Ris|51">Pasir Ris (51)</option>
+        <option value="Punggol|82">Punggol (82)</option>
+        <option value="Queenstown|14">Queenstown (14)</option>
+        <option value="Sembawang|75">Sembawang (75)</option>
+        <option value="Sengkang|54">Sengkang (54)</option>
+        <option value="Serangoon|55">Serangoon (55)</option>
+        <option value="Tampines|52">Tampines (52)</option>
+        <option value="Toa Payoh|31">Toa Payoh (31)</option>
+        <option value="Woodlands|73">Woodlands (73)</option>
+        <option value="Yishun|76">Yishun (76)</option>
+      </select>
     </div>
   </div>
   <br>
   <button type="submit" class="declutter-btn active">
-    <i class="fas fa-magic"></i> Search all <i class="fas fa-laptop"></i>
+    <i class="fas fa-magic"></i> <a href="/gen" class="resource-link">Search</a> <i class="fas fa-laptop"></i>
   </button>
 </form>
 
