@@ -89,15 +89,24 @@ app.get('/channels', async (req, res) => {
   }
 });
 
-//Show matching channels in results
+// Show matching channels in results
 app.post('/results', async (req, res) => {
-  const { item, type, postcode } = req.body;
-  let where = {};
-  if (item) where.Items = item;
-  if (type) where.Type = type;
-  if (postcode) where.Postcode = parseInt(postcode);
-  const results = await prisma.Channels.findMany({ where });
-  res.render('pages/results', { results, item, type, postcode });
+  const { item } = req.body;
+  try {
+    const results = await prisma.Channels.findMany({
+      where: {
+        Items: { contains: item, mode: 'insensitive' }
+      },
+      orderBy: {
+        DistanceFromHougang: 'asc'
+      },
+      take: 10
+    });
+    res.render('pages/results', { results, item });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/results', { results: [], item });
+  }
 });
 
 // Start the server
