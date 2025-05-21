@@ -34,12 +34,12 @@ app.get('/', async (req, res) => {
   }
 });
 
-// About page
+// about page
 app.get('/about', function(req, res) {
     res.render('pages/about');
 });
 
-// Search
+// search
 app.get('/search', function(req, res) {
     res.render('pages/search');
 });
@@ -73,6 +73,11 @@ app.get('/gen_repair', function(req, res) {
   res.render('pages/gen_repair');
 });
 
+// carbon
+app.get('/carbon', function(req, res) {
+  res.render('pages/carbon');
+});
+
 // imagelibrary
 app.get('/imagelibrary', function(req, res) {
   res.render('pages/imagelibrary');
@@ -104,6 +109,7 @@ app.post('/results', async (req, res) => {
   }
 });
 
+// Post results
 app.post('/results', async (req, res) => {
   // handle search logic here
 });
