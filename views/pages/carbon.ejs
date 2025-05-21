@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+<main class="container">
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
+
+<form id="carbonForm">
+<label for="itemType">Select an item:</label>
+<select id="itemType">
+<option value="laptop">Laptop</option>
+<option value="smartphone">Smartphone</option>
+<option value="battery">Battery (AA)</option>
+<option value="tv">LED TV</option>
+<option value="fridge">Refrigerator</option>
+</select>
+
+<label for="actionType">What are you doing?</label>
+<select id="actionType">
+<option value="repair">Repair</option>
+<option value="recycle">Recycle</option>
+</select>
+
+<button type="submit">Calculate Savings</button>
+</form>
+
+<p id="result"></p>
+
+<!-- Footer -->  
+     <footer>
+        <p>&copy; 2025 <a href="/about"><strong>DeclutterLY.space</strong></a>
+    </footer>
+</body>
+</html>

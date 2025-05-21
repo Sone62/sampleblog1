@@ -33,3 +33,15 @@ function sortByDistance() {
 }
 
 document.addEventListener("DOMContentLoaded", () => renderSpots());
+
+document.getElementById("carbonForm").addEventListener("submit", async (e) => {
+e.preventDefault();
+const item = document.getElementById("itemType").value;
+const action = document.getElementById("actionType").value;
+
+const response = await fetch(`/api/carbon-savings?item=${item}&action=${action}`);
+const data = await response.json();
+
+document.getElementById("result").textContent =
+`You can save approximately ${data.savings} kg of CO₂e by choosing to ${action} your ${item}.`;
+});
