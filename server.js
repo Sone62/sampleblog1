@@ -102,7 +102,7 @@ app.post('/results', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany({
       where: {
-        Estatecode: estatecode,
+        Estatecode: estateCode, // <-- typo fixed
         Itemcategory: {
           equals: itemcategory,
           mode: 'insensitive',
