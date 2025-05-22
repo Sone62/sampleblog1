@@ -14,7 +14,7 @@ body {
   .navbar {
     width: 100vw;
     padding: 10px 0;
-    text-align: center;
+    text-align: right;
   }
   .input-group,
   .input-group-location {
