@@ -96,13 +96,16 @@ app.get('/results', async (req, res) => {
 
 // POST handler for filtering
 app.post('/results', async (req, res) => {
-  const estateCode = req.body.estatecode;
+  let where = {};
+  if (req.body.estatecode) {
+    where.Estatecode = req.body.estatecode;
+  }
   const itemcategory = req.body.itemcategory;
 
   try {
     const channels = await prisma.Channels.findMany({
       where: {
-        Estatecode: estateCode, // <-- typo fixed
+        ...where,
         Itemcategory: {
           equals: itemcategory,
           mode: 'insensitive',
