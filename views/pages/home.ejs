@@ -36,7 +36,7 @@
   <div class="input-methods">
     <div class="input-group">
       <label for="itemcategory">Choose a category:</label>
-      <select id="itemcategory" name="itemcategory" onchange="goToCategoryLink(this)">
+      <select id="itemcategory" name="itemcategory">
         <option value="">Select a category</option>
         <option value="Ewaste: ICT equipment,  batteries, lamps only)" data-link="/gen">Ewaste: laptops, mobile, batteries, lamps</option>
         <option value="Ewaste: ICT equipment, lamps only)" data-link="/gen_recycle">Ewaste: laptops, mobile, batteries, lamps</option>
@@ -64,7 +64,7 @@
         <option value="68">Choa Chu Kang (68)</option>
         <option value="12">Clementi (12)</option>
         <option value="38">Geylang (38)</option>
-        <option value="53">Hougang (53)</option>
+        <option value="53" data-link="/gen_recyclehougang">Hougang (53)</option>
         <option value="60">Jurong East (60)</option>
         <option value="64">Jurong West (64)</option>
         <option value="32">Kallang/Whampoa (32)</option>
@@ -77,7 +77,7 @@
         <option value="55">Serangoon (55)</option>
         <option value="52">Tampines (52)</option>
         <option value="31">Toa Payoh (31)</option>
-        <option value="73">Woodlands (73)</option>
+        <option value="73" data-link="/gen_repairwoodlands">Woodlands (73)</option>
         <option value="76">Yishun (76)</option>
       </select>
     </div>
@@ -100,6 +100,15 @@
 </body>
 <script>
 document.getElementById('estatecode').addEventListener('change', function() {
+  const selectedOption = this.options[this.selectedIndex];
+  const link = selectedOption.getAttribute('data-link');
+  if (link) {
+    window.location.href = link;
+  }
+});
+</script>
+<script>
+document.getElementById('itemcategory').addEventListener('change', function() {
   const selectedOption = this.options[this.selectedIndex];
   const link = selectedOption.getAttribute('data-link');
   if (link) {
