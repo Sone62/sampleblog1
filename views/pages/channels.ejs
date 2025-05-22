@@ -4,22 +4,20 @@
   <title>Channels</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-<!-- Navbar which can be reused across other pages -->
-<%- include('../partials/navbar'); %>
- 
-       <% if (channels && channels.length > 0) { %>
+  <!-- Navbar which can be reused across other pages -->
+  <%- include('../partials/navbar'); %>
+  <main class="container">
+    <% if (channels && channels.length > 0) { %>
       <ul>
         <% channels.forEach(function(channel) { %>
           <li>
             <strong><%= channel.Name %></strong><br>
-           <strong>Type:</strong> <%= channel.Type %><br>
+            <strong>Type:</strong> <%= channel.Type %><br>
             <strong>Description:</strong> <%= channel.Desc %><br>
             <strong>Address:</strong> <%= channel.Address %><br>
             <strong>Item Category:</strong> <%= channel.Itemcategory %><br>
             <strong>Postcode:</strong> <%= channel.Postcode %><br>
-
             <!-- Add more fields as needed -->
           </li>
         <% }); %>

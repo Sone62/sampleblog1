@@ -105,46 +105,37 @@ app.get('/channels', async (req, res) => {
 
 // Show matching channels based on estate and category
 app.get('/results', async (req, res) => {
-  const { estate, category } = req.query;
+  const { estatecode, itemcategory } = req.query;
   try {
     const channels = await prisma.Channels.findMany({
       where: {
-        Estatecode: estate, // No parseInt
-        Items: {
-          contains: category,
-          mode: 'insensitive',
-        },
-      },
+        Estatecode: estatecode,
+        Itemcategory: itemcategory
+      }
     });
-    res.render('pages/results', { channels });
+    res.render('pages/results', { channels, estatecode, itemcategory });
   } catch (error) {
     console.error(error);
-    res.render('pages/results', { channels: [] });
+    res.render('pages/results', { channels: [], estatecode, itemcategory });
   }
 });
 
 // POST handler for filtering
 app.post('/results', async (req, res) => {
-  let where = {};
-  if (req.body.estatecode) {
-    where.Estatecode = req.body.estatecode;
-  }
-  const itemcategory = req.body.itemcategory;
+  const { estatecode, itemcategory } = req.body;
 
   try {
     const channels = await prisma.Channels.findMany({
       where: {
-        ...where,
-        Itemcategory: {
-          equals: itemcategory,
-          mode: 'insensitive',
-        },
-      },
+        Estatecode: estatecode,
+        Itemcategory: itemcategory
+      }
     });
-    res.render('pages/results', { channels });
+
+    res.render('pages/results', { channels, estatecode, itemcategory });
   } catch (error) {
     console.error(error);
-    res.render('pages/results', { channels: [] });
+    res.render('pages/results', { channels: [], estatecode, itemcategory });
   }
 });
 

@@ -9,8 +9,10 @@
 </head>
 <body>
   <h2>Locations</h2>
- 
-  <% if (channels.length === 0) { %>
+  <% if (estatecode && itemcategory) { %>
+    <p>Showing results for <strong><%= itemcategory %></strong> in estate code <strong><%= estatecode %></strong>.</p>
+  <% } %>
+  <% if (!channels || channels.length === 0) { %>
     <p>No results found.</p>
   <% } else { %>
     <div id="map" style="height: 500px;" aria-label="Map showing matched locations"></div>
@@ -24,3 +26,5 @@
       <% }) %>
     </ul>
   <% } %>
+</body>
+</html>
