@@ -8,18 +8,19 @@ datasource db {
 }
 // Channels model for database
 model Channels { 
-id          Int @id @default(autoincrement()) 
-X           Float 
-Y           Float 
-Z           Int 
-Type        String 
-Name        String 
-Items       String 
-Desc        String 
-Postcode    Int
-Estatecode  Int
-Address     String 
-Building    String
+id            Int @id @default(autoincrement()) 
+X             Float 
+Y             Float 
+Z             Int 
+Type          String 
+Name          String 
+Items         String
+Itemcategory  String
+Desc          String 
+Postcode      String
+Estatecode    String
+Address       String 
+Building      String
 }
 // Post model represents individual blog posts
 model Post {
