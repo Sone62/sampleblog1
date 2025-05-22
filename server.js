@@ -50,6 +50,7 @@ app.get('/gen_repair', function(req, res) {
   res.render('pages/gen_repair');
 });
 
+//Hougang-specific pages
 // gen_hg
 app.get('/gen_hg', function(req, res) {
   res.render('pages/gen_hg');
@@ -61,6 +62,23 @@ app.get('/gen_recyclehg', function(req, res) {
 // gen_recyclehgbatt
 app.get('/gen_recyclehgbatt', function(req, res) {
   res.render('pages/gen_recyclehgbatt');
+});
+
+// Woodlands-specific pages
+app.get('/gen_recyclewoodlands', function(req, res) {
+  res.render('pages/gen_recyclewoodlands');
+});
+
+app.get('/gen_repairwoodlands', function(req, res) {
+  res.render('pages/gen_repairwoodlands');
+});
+
+app.get('/gen_donatewoodlands', function(req, res) {
+  res.render('pages/gen_donatewoodlands');
+});
+
+app.get('/gen_woodlands', function(req, res) {
+  res.render('pages/gen_woodlands');
 });
 
 //backend to pass data to frontend
