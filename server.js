@@ -24,10 +24,11 @@ app.get('/', async (req, res) => {
 app.get('/about', function(req, res) {
     res.render('pages/about');
 });
-// quick tip
-app.get('/tip function(req, res) {
-    res.render('pages/tip
+
+app.get('/tip', function(req, res) {
+  res.render('pages/gen');
 });
+
 
 // gen
 app.get('/gen', function(req, res) {
