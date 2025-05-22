@@ -51,17 +51,24 @@ app.get('/gen_repair', function(req, res) {
 });
 
 //Hougang-specific pages
-// gen_hg
 app.get('/gen_hg', function(req, res) {
   res.render('pages/gen_hg');
 });
-// gen_recyclehg
+
 app.get('/gen_recyclehg', function(req, res) {
   res.render('pages/genrecyclehg');
 });
-// gen_recyclehgbatt
+
 app.get('/gen_recyclehgbatt', function(req, res) {
   res.render('pages/gen_recyclehgbatt');
+});
+
+app.get('/gen_repairhg', function(req, res) {
+  res.render('pages/genrepairhg');
+});
+
+app.get('/gen_repairhg', function(req, res) {
+  res.render('pages/genrepairhg');
 });
 
 // Woodlands-specific pages
