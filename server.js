@@ -60,7 +60,7 @@ app.get('/gen_hg', function(req, res) {
 });
 
 app.get('/gen_recyclehg', function(req, res) {
-  res.render('pages/genrecyclehg');
+  res.render('pages/gen_recyclehg');
 });
 
 app.get('/gen_recyclehgbatt', function(req, res) {
@@ -68,11 +68,11 @@ app.get('/gen_recyclehgbatt', function(req, res) {
 });
 
 app.get('/gen_repairhg', function(req, res) {
-  res.render('pages/genrepairhg');
+  res.render('pages/gen_repairhg');
 });
 
-app.get('/gen_repairhg', function(req, res) {
-  res.render('pages/genrepairhg');
+app.get('/gen_donatehg', function(req, res) {
+  res.render('pages/gen_donatehg');
 });
 
 // Woodlands-specific pages
