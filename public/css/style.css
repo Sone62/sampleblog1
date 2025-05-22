@@ -71,7 +71,7 @@ h2 {
 color: #4d7b4d;
 }
 h3 {
-color: #4d7b4d;
+color: #000000;
 }
 h4 {
 color: #000000;
@@ -114,10 +114,17 @@ a:hover {
   display: block;
   margin: 0 auto;   /* Center the image */
 }
+.about-img {
+  width: 80%;
+  height: auto;     /* Maintains aspect ratio */
+  display: block;
+  margin: 0 auto;   /* Center the image */
+}
 
 label {
 font-weight: bold;
 }
+
 
 input[type="text"], textarea, select {
 width: 100%;
