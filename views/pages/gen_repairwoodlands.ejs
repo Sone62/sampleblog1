@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+  <main class="container">
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
+    <h1>Nearby Spots - Woodlands Only</h1>
+
+<div class="filter-buttons">
+    <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+  </div>
+
+  <div class="cards-container">
+    <!-- Only Woodlands Repair Cards -->
+    <div class="card" data-category="Repair">
+      <h2>Woodlands Repair Centre</h2>
+      <p><strong>Address:</strong> 900 South Woodlands Drive, #01-01, Singapore 730900</p>
+      <p><strong>Services:</strong> Electronics and household appliance repair.</p>
+      <p><strong>Contact:</strong> <a href="https://example.com/woodlands-repair" target="_blank">Woodlands Repair Centre</a></p>
+      <p><strong>Distance:</strong> ~1 km</p>
+    </div>
+    <!-- Add more Woodlands-specific cards here if you have them -->
+  </div>
+</main>
+</body>
+</html>
