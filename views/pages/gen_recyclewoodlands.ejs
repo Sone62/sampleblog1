@@ -19,13 +19,13 @@
   <main class="container">
 <!-- Navbar which can be reused across other pages -->
 <%- include('../partials/navbar'); %>
-    <h1>Nearby Spots - Woodlands Only</h1>
+    <h1>Nearby Recycling pots in Woodlands</h1>
 
 <div class="filter-buttons">
-    <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
-    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
-    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
-    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+    <button onclick="filterCards('all', this)" class="active"><a href="/gen_woodlands">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recyclewoodlands">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repairwoodlands">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donatewoodlands">Donate</a></button>
 </div>
 
   <!-- Woodlands Recycling Point -->
