@@ -67,7 +67,6 @@ app.get('/gen_recyclehgbatt', function(req, res) {
 app.get('/channels', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany();
-    console.log("test",channels);
     res.render('pages/channels', { channels });
   } catch (error) {
     console.error(error);
@@ -103,7 +102,7 @@ app.post('/results', async (req, res) => {
   try {
     const channels = await prisma.Channels.findMany({
       where: {
-        Estatecode: estateCode,
+        Estatecode: estatecode,
         Itemcategory: {
           equals: itemcategory,
           mode: 'insensitive',
