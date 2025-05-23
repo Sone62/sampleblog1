@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+  <main class="container">
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
+    <h1>Locations</h1>
+
+
+<div class="filter-buttons">
+    <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+  </div>
+  
+  <div class="cards-container">
+    
+    <!-- Recycle Cards -->
+    <div class="card" data-category="Recycle">
+      <h2>H&M - NEX</h2>
+      <p><strong>Address:</strong> 23 Serangoon Central, NEX, #01-12 to #01-33</p>
+      <p><strong>Services:</strong> Accepts unwanted clothes or textiles, by any brand and in any condition. Clothes that can be reworn will be marketed as second-hand goods, while those that can't will be shredded and recycled to produce new clothes, insulation material, or cleaning cloths.</p>
+      <p><strong>Contact:</strong> 6634 7472</p>
+      <p><strong>Distance:</strong> ~2.5 km</p>
+    </div>
+    <div class="card" data-category="Recycle">
+      <h2>Greensquare - Viva Business Mall</h2>
+      <p><strong>Address:</strong> 750 Chai Chee Road, Lift Lobby 1</p>
+      <p><strong>Services:</strong> Provides textile recycling services to households and organizations in Singapore. They operate a free doorstep textiles recyclables collection.</p>
+      <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/donation-resale-and-repair-channels" target="_blank">Contact Greensquare</a></p>
+      <p><strong>Distance:</strong> ~10 km</p>
+    </div>
+    <div class="card" data-category="Recycle">
+      <h2>Greensquare - The Green Collective at Funan</h2>
+      <p><strong>Address:</strong> 107 North Bridge Road, Funan #02-18</p>
+      <p><strong>Services:</strong> Similar textile recycling services as other Greensquare locations.</p>
+      <p><strong>Contact:</strong> <a href="https://www.nea.gov.sg/our-services/waste-management/donation-resale-and-repair-channels" target="_blank">Contact Greensquare</a></p>
+      <p><strong>Distance:</strong> ~11 km</p>
+    </div>
+
+    <!-- Recycle Cards: E-Waste Locations -->
+    <div class="card" data-category="Recycle">
+      <h2>ALBA E-Waste Bin - Ang Mo Kio Hub</h2>
+      <p><strong>Address:</strong> 53 Ang Mo Kio Ave 3, Singapore 569933</p>
+      <p><strong>Services:</strong> Accepts small e-waste items such as mobile phones, chargers, cables, laptops, and batteries.</p>
+      <p><strong>Contact:</strong> 1800-2255-2582</p>
+      <p><strong>Distance:</strong> Ang Mo Kio</p>
+      <p><a href="https://www.alba-wh.sg/e-waste/" target="_blank">More Info</a></p>
+    </div>
+    <div class="card" data-category="Recycle">
+      <h2>ALBA E-Waste Bin - Bedok Mall</h2>
+      <p><strong>Address:</strong> 311 New Upper Changi Rd, Singapore 467360</p>
+      <p><strong>Services:</strong> Accepts small e-waste items such as mobile phones, chargers, cables, laptops, and batteries.</p>
+      <p><strong>Contact:</strong> 1800-2255-2582</p>
+      <p><strong>Distance:</strong> Bedok</p>
+      <p><a href="https://www.alba-wh.sg/e-waste/" target="_blank">More Info</a></p>
+    </div>
+    <div class="card" data-category="Recycle">
+      <h2>ALBA E-Waste Bin - Jurong Point</h2>
+      <p><strong>Address:</strong> 1 Jurong West Central 2, Singapore 648886</p>
+      <p><strong>Services:</strong> Accepts small e-waste items such as mobile phones, chargers, cables, laptops, and batteries.</p>
+      <p><strong>Contact:</strong> 1800-2255-2582</p>
+      <p><strong>Distance:</strong> Jurong West</p>
+      <p><a href="https://www.alba-wh.sg/e-waste/" target="_blank">More Info</a></p>
+    </div>
+    <div class="card" data-category="Recycle">
+      <h2>ALBA E-Waste Bin - Woodlands Civic Centre</h2>
+      <p><strong>Address:</strong> 900 South Woodlands Drive, Singapore 730900</p>
+      <p><strong>Services:</strong> Accepts small e-waste items such as mobile phones, chargers, cables, laptops, and batteries.</p>
+      <p><strong>Contact:</strong> 1800-2255-2582</p>
+      <p><strong>Distance:</strong> Woodlands</p>
+      <p><a href="https://www.alba-wh.sg/e-waste/" target="_blank">More Info</a></p>
+    </div>
+    <div class="card" data-category="Recycle">
+      <h2>ALBA E-Waste Bin - Tampines Mall</h2>
+      <p><strong>Address:</strong> 4 Tampines Central 5, Singapore 529510</p>
+      <p><strong>Services:</strong> Accepts small e-waste items such as mobile phones, chargers, cables, laptops, and batteries.</p>
+      <p><strong>Contact:</strong> 1800-2255-2582</p>
+      <p><strong>Distance:</strong> Tampines</p>
+      <p><a href="https://www.alba-wh.sg/e-waste/" target="_blank">More Info</a></p>
+    </div>
+  </div>
+
+  <script>
+    function filterCards(category, btn) {
+      // Remove 'active' class from all buttons
+      document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+      // Add 'active' to the clicked button
+      if(btn) btn.classList.add('active');
+      // Filter cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+    // On page load, show all cards
+    filterCards('all', document.querySelector('.filter-buttons button'));
+  </script>
+
+</body>
+</html>

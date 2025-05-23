@@ -55,8 +55,12 @@ app.get('/gen_repair', function(req, res) {
 });
 
 // items specific
-app.get('/gen_donateclothes', function(req, res) {
-  res.render('pages/gen_donateclothes');
+app.get('/gen_ewaste', function(req, res) {
+  res.render('pages/gen_ewaste');
+});
+
+app.get('/gen_clothes', function(req, res) {
+  res.render('pages/gen_clothes');
 });
 
 app.get('/gen_recyclebatt', function(req, res) {
