@@ -147,6 +147,23 @@ border: 1px solid #1e8a6b;
 border-radius: 4px;
 }
 
+/* Make select dropdowns responsive */
+.input-group select {
+  width: 100%;
+  max-width: 100%;
+  font-size: 1rem;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+
+/* Optional: Adjust font size for smaller screens */
+@media (max-width: 600px) {
+  .input-group select {
+    font-size: 1.1em;
+    min-width: 0;
+  }
+}
+
 button {
 background-color: #00a2438e;
 color: rgb(0, 0, 0);
