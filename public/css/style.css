@@ -229,11 +229,13 @@ min-width: 220px;
 }
 
 .about-content {
+  width: 600px;
+  max-width: 60vw;
   text-align: left;
 }
 
 .about-img {
-  width: 570px;
+  width: 600px;
   max-width: 60vw;
   height: auto;
   border-radius: 1rem;
