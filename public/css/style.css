@@ -237,7 +237,7 @@ min-width: 220px;
 
 .tip-img {
   width: 100%;
-  max-width: 320px;
+  max-width: 220px;
   height: auto;
   border-radius: 1rem;
   box-shadow: 0 2px 12px rgba(0,0,0,0.08);
