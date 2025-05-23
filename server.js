@@ -26,7 +26,7 @@ app.get('/about', function(req, res) {
 });
 
 app.get('/tip', function(req, res) {
-  res.render('pages/gen');
+  res.render('pages/tip');
 });
 
 
