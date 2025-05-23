@@ -54,6 +54,15 @@ app.get('/gen_repair', function(req, res) {
   res.render('pages/gen_repair');
 });
 
+// items specific
+app.get('/gen_donatehg', function(req, res) {
+  res.render('pages/gen_donatehg');
+});
+
+app.get('/gen_recyclebatt', function(req, res) {
+  res.render('pages/gen_recyclebatt');
+});
+
 //Hougang-specific pages
 app.get('/gen_hg', function(req, res) {
   res.render('pages/gen_hg');
@@ -62,6 +71,8 @@ app.get('/gen_hg', function(req, res) {
 app.get('/gen_recyclehg', function(req, res) {
   res.render('pages/gen_recyclehg');
 });
+
+
 
 app.get('/gen_recyclehgbatt', function(req, res) {
   res.render('pages/gen_recyclehgbatt');
