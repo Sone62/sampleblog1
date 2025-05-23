@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+  <main class="container">
+    <%- include('../partials/navbar'); %>
+    <h1>Nearby Spots in Ang Mo Kio</h1>
+
+    <div class="filter-buttons">
+      <button onclick="filterCards('all', this)" class="active"><a href="/gen_amk">All</a></button>
+      <button onclick="filterCards('Recycle', this)"><a href="/gen_recycleamk">Recycle</a></button>
+      <button onclick="filterCards('Repair', this)"><a href="/gen_repairamk">Repair</a></button>
+      <button onclick="filterCards('Donate', this)"><a href="/gen_donateamk">Donate</a></button>
+    </div>
+
+    <div class="cards-container">
+      <!-- Donate Cards (Ang Mo Kio) -->
+      <div class="card" data-category="Donate">
+        <h2>MINDS Shop Plus @ Ang Mo Kio</h2>
+        <p><strong>Address:</strong> 71 Redhill Road, #01-20, Singapore 150071 (serves AMK area)</p>
+        <p><strong>Services:</strong> Accepts donations of pre-loved items, clothing, and household goods. Proceeds support persons with intellectual disabilities.</p>
+        <p><strong>Contact:</strong> 6473 3466</p>
+        <p><strong>Distance:</strong> ~3.5 km</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>Salvation Army Donation Booth - Ang Mo Kio</h2>
+        <p><strong>Address:</strong> Blk 528 Ang Mo Kio Ave 10, Singapore 560528</p>
+        <p><strong>Services:</strong> Accepts clothing, books, toys, and household items.</p>
+        <p><strong>Contact:</strong> 6555 0251</p>
+        <p><strong>Distance:</strong> ~1.0 km</p>
+      </div>
+    </div>
+
+    <script>
+      function filterCards(category, btn) {
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+        // Add 'active' to the clicked button
+        if(btn) btn.classList.add('active');
+        // Filter cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+      // On page load, show all cards
+      filterCards('all', document.querySelector('.filter-buttons button'));
+    </script>
+  </main>
+</body>
+</html>

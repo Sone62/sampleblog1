@@ -77,6 +77,24 @@ app.get('/gen_book', function(req, res) {
   res.render('pages/gen_book');
 });
 
+
+//AMK-specific pages
+app.get('/gen_amk', function(req, res) {
+  res.render('pages/gen_amk');
+});
+
+app.get('/gen_donateamk', function(req, res) {
+  res.render('pages/gen_donateamk');
+});
+
+app.get('/gen_recycleamk', function(req, res) {
+  res.render('pages/gen_recycleamk');
+});
+
+app.get('/gen_repairamk', function(req, res) {
+  res.render('pages/gen_repairamk');
+});
+
 //Hougang-specific pages
 app.get('/gen_hg', function(req, res) {
   res.render('pages/gen_hg');

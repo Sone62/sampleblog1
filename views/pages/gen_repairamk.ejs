@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+  <main class="container">
+    <%- include('../partials/navbar'); %>
+    <h1>Nearby Spots in Ang Mo Kio</h1>
+
+    <div class="filter-buttons">
+      <button onclick="filterCards('all', this)" class="active"><a href="/gen_amk">All</a></button>
+      <button onclick="filterCards('Recycle', this)"><a href="/gen_recycleamk">Recycle</a></button>
+      <button onclick="filterCards('Repair', this)"><a href="/gen_repairamk">Repair</a></button>
+      <button onclick="filterCards('Donate', this)"><a href="/gen_donateamk">Donate</a></button>
+    </div>
+
+      <!-- Repair Cards (Ang Mo Kio) -->
+      <div class="card" data-category="Repair">
+        <h2>AMK Hub Mobile Repair</h2>
+        <p><strong>Address:</strong> 53 Ang Mo Kio Ave 3, #B2-34, Singapore 569933</p>
+        <p><strong>Services:</strong> Mobile phone and tablet repair services.</p>
+        <p><strong>Contact:</strong> 6481 1234</p>
+        <p><strong>Distance:</strong> ~0.2 km</p>
+      </div>
+      <div class="card" data-category="Repair">
+        <h2>Fixwerks</h2>
+        <p><strong>Address:</strong> 7 Ang Mo Kio Street 64, #01-01, Singapore 569086</p>
+        <p><strong>Services:</strong> Repairs for household electrical appliances and electronics.</p>
+        <p><strong>Contact:</strong> 6765 8890</p>
+        <p><strong>Distance:</strong> ~1.5 km</p>
+      </div>
+
+
+
+    <script>
+      function filterCards(category, btn) {
+        // Remove 'active' class from all buttons
+        document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+        // Add 'active' to the clicked button
+        if(btn) btn.classList.add('active');
+        // Filter cards
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+      // On page load, show all cards
+      filterCards('all', document.querySelector('.filter-buttons button'));
+    </script>
+  </main>
+</body>
+</html>
