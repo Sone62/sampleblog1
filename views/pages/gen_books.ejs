@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+  <main class="container">
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
+    <h1>Locations - books</h1>
+
+
+<div class="filter-buttons">
+    <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+  </div>
+  
+  <div class="cards-container">
+    
+    <!-- Donate Cards -->
+    <div class="card" data-category="Donate">
+      <h2>The Helping Hand</h2>
+      <p><strong>Address:</strong> 819 Upper Serangoon Road, Singapore 534678</p>
+      <p><strong>Services:</strong> Accepts a range of household items – from computers to furniture and clothing.</p>
+      <p><strong>Contact:</strong> 6713 9150</p>
+      <p><strong>Distance:</strong> ~1.5 km</p>
+    </div>
+    <div class="card" data-category="Donate">
+      <h2>ItsRainingRaincoats</h2>
+      <p><strong>Address:</strong> 470 Upper Paya Lebar Road, Singapore 534235</p>
+      <p><strong>Services:</strong> Accepts men’s apparel in pristine condition for migrant workers.</p>
+      <p><strong>Contact:</strong> 8101 8187</p>
+      <p><strong>Distance:</strong> ~3 km</p>
+    </div>
+    <div class="card" data-category="Donate">
+      <h2>MINDS - Woodlands</h2>
+      <p><strong>Address:</strong> 30 Woodlands Ring Road</p>
+      <p><strong>Services:</strong> Donations will provide for the daily operations of MINDS centres, schools, and residential homes.</p>
+      <p><strong>Contact:</strong> 6366 3966</p>
+      <p><strong>Distance:</strong> ~15 km</p>
+    </div>
+  </div>
+
+  <div class="cards-container">
+  <!-- Donate Cards: Book Donation Locations -->
+  <div class="card" data-category="Donate">
+    <h2>Books Beyond Borders</h2>
+    <p><strong>Address:</strong> 1 Commonwealth Lane, #06-22, Singapore 149544</p>
+    <p><strong>Services:</strong> Accepts gently used English books for resale and donation to schools in need.</p>
+    <p><strong>Contact:</strong> <a href="https://www.booksbeyondborders.org/" target="_blank">booksbeyondborders.org</a></p>
+    <p><strong>Distance:</strong> Queenstown</p>
+  </div>
+  <div class="card" data-category="Donate">
+    <h2>National Library Board (NLB) Book Exchange Corners</h2>
+    <p><strong>Address:</strong> Various public libraries across Singapore</p>
+    <p><strong>Services:</strong> Accepts used books in good condition for exchange with other readers.</p>
+    <p><strong>Contact:</strong> 6332 3255</p>
+    <p><strong>Distance:</strong> Multiple locations</p>
+  </div>
+  <div class="card" data-category="Donate">
+    <h2>FairPrice Share-A-Textbook</h2>
+    <p><strong>Address:</strong> Selected NTUC FairPrice outlets (seasonal, check website for details)</p>
+    <p><strong>Services:</strong> Accepts used textbooks and assessment books for redistribution to students in need.</p>
+    <p><strong>Contact:</strong> 6552 2722</p>
+    <p><strong>Distance:</strong> Various</p>
+  </div>
+  <div class="card" data-category="Donate">
+    <h2>Dignity Mama Stall</h2>
+    <p><strong>Address:</strong> NUH Medical Centre, 1 Lower Kent Ridge Road, #01-42, Singapore 119082</p>
+    <p><strong>Services:</strong> Accepts pre-loved books for resale by youth with special needs and their families.</p>
+    <p><strong>Contact:</strong> 8189 7678</p>
+    <p><strong>Distance:</strong> Kent Ridge</p>
+  </div>
+  <div class="card" data-category="Donate">
+    <h2>Books for Hope</h2>
+    <p><strong>Address:</strong> 10 Ubi Crescent, Ubi Techpark, Lobby E, #05-95, Singapore 408564</p>
+    <p><strong>Services:</strong> Accepts children’s books in good condition for donation to underprivileged children.</p>
+    <p><strong>Contact:</strong> <a href="https://www.booksforhope.sg/" target="_blank">booksforhope.sg</a></p>
+    <p><strong>Distance:</strong> Ubi</p>
+  </div>
+</div>
+
+  <script>
+    function filterCards(category, btn) {
+      // Remove 'active' class from all buttons
+      document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+      // Add 'active' to the clicked button
+      if(btn) btn.classList.add('active');
+      // Filter cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+    // On page load, show all cards
+    filterCards('all', document.querySelector('.filter-buttons button'));
+  </script>
+
+</body>
+</html>

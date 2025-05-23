@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-RGYMZRZ03H');
+</script>
+</head>
+
+<body>
+  <main class="container">
+<!-- Navbar which can be reused across other pages -->
+<%- include('../partials/navbar'); %>
+    <h1>Locations - bags and accessories/h1>
+
+
+<div class="filter-buttons">
+    <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+  </div>
+  
+  <div class="cards-container">
+  <!-- Recycle Cards: Bags & Accessories -->
+  <div class="card" data-category="Recycle">
+    <h2>Greensquare Textile Recycling Bin - Clementi Mall</h2>
+    <p><strong>Address:</strong> 3155 Commonwealth Ave West, Singapore 129588</p>
+    <p><strong>Services:</strong> Accepts clean bags, clothes, shoes, and household linens for recycling and reuse.</p>
+    <p><strong>Contact:</strong> 9002 9606</p>
+    <p><strong>Distance:</strong> Clementi</p>
+  </div>
+  <div class="card" data-category="Recycle">
+    <h2>H&M Garment Collecting Programme</h2>
+    <p><strong>Address:</strong> Multiple outlets (e.g., Orchard Building, Ion Orchard, VivoCity)</p>
+    <p><strong>Services:</strong> Accepts any brand of unwanted bags, clothing, and textiles for recycling.</p>
+    <p><strong>Contact:</strong> 6235 1459</p>
+    <p><strong>Distance:</strong> Various</p>
+  </div>
+
+  <!-- Repair Cards: Bags & Accessories -->
+  <div class="card" data-category="Repair">
+    <h2>ColorWash</h2>
+    <p><strong>Address:</strong> 176 Orchard Road, #03-19 The Centrepoint, Singapore 238843</p>
+    <p><strong>Services:</strong> Professional cleaning and repair for bags, wallets, and accessories.</p>
+    <p><strong>Contact:</strong> 6235 3132</p>
+    <p><strong>Distance:</strong> Orchard</p>
+  </div>
+  <div class="card" data-category="Repair">
+    <h2>Bags Butler</h2>
+    <p><strong>Address:</strong> 1 Raffles Place, #04-61 One Raffles Place, Singapore 048616</p>
+    <p><strong>Services:</strong> Bag and leather goods repair, restoration, and cleaning.</p>
+    <p><strong>Contact:</strong> 6909 0766</p>
+    <p><strong>Distance:</strong> Raffles Place</p>
+  </div>
+
+  <!-- Donate Cards: Bags & Accessories -->
+  <div class="card" data-category="Donate">
+    <h2>MINDS Shop Plus @ Hougang</h2>
+    <p><strong>Address:</strong> 11 Hougang Ave 6, #01-02, Singapore 538789</p>
+    <p><strong>Services:</strong> Accepts pre-loved bags, accessories, clothing, and household items. Proceeds support persons with intellectual disabilities.</p>
+    <p><strong>Contact:</strong> 8180 1760</p>
+    <p><strong>Distance:</strong> Hougang</p>
+  </div>
+  <div class="card" data-category="Donate">
+    <h2>Salvation Army Donation Centre - Bishan</h2>
+    <p><strong>Address:</strong> 7 Bishan Street 13, Singapore 579798</p>
+    <p><strong>Services:</strong> Accepts bags, accessories, clothing, shoes, and other reusable items.</p>
+    <p><strong>Contact:</strong> 6555 0251</p>
+    <p><strong>Distance:</strong> Bishan</p>
+  </div>
+  <div class="card" data-category="Donate">
+    <h2>Pass-It-On (Online Platform)</h2>
+    <p><strong>Address:</strong> Online platform for donating usable bags and accessories to those in need in Singapore.</p>
+    <p><strong>Services:</strong> Connects donors with Voluntary Welfare Organisations and individuals in need.</p>
+    <p><strong>Contact:</strong> <a href="https://www.passiton.org.sg/" target="_blank">passiton.org.sg</a></p>
+    <p><strong>Distance:</strong> N/A (Online)</p>
+  </div>
+</div>
+
+  <script>
+    function filterCards(category, btn) {
+      // Remove 'active' class from all buttons
+      document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
+      // Add 'active' to the clicked button
+      if(btn) btn.classList.add('active');
+      // Filter cards
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+    // On page load, show all cards
+    filterCards('all', document.querySelector('.filter-buttons button'));
+  </script>
+
+</body>
+</html>
