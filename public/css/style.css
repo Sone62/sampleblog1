@@ -14,7 +14,7 @@ body {
   .navbar {
     width: 100vw;
     padding: 10px 0;
-    text-align: right;
+    text-align: left;
   }
   .input-group,
   .input-group-location {
@@ -67,7 +67,7 @@ h1 {
 color: #00a808;
 }
 h2 {
-color: #4d7b4d;
+color: #2d982d;
 }
 h3 {
 color: #000000;
@@ -199,8 +199,8 @@ background-color: #54ff9b;
 
 .navbar a:hover,
 .navbar a:focus {
-  background: #e0e0e0;
-  color: #0070f3;
+  background: #e2e2e2;
+  color: #469842;
 }
 
 @media (max-width: 600px) {
@@ -233,7 +233,7 @@ font-weight: bold;
 }
       
 .filter-buttons button.active {
-background: #900cbf;
+background: #54ff9b;
 color: #fff;
 }
       
@@ -251,6 +251,7 @@ padding: 16px;
 width: 320px;
 min-width: 220px;
 }
+
 .about_container {
   max-width: 700px;
   margin: 0 auto;
@@ -267,7 +268,7 @@ min-width: 220px;
 
 .about-img {
   width: 100%;
-  max-width: 500px;
+  max-width: 320px;
   height: auto;
   border-radius: 1rem;
   margin: 0 auto 1.5rem auto;
