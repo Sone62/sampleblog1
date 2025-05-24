@@ -7,6 +7,17 @@
 <body>
   <!-- Navbar which can be reused across other pages -->
   <%- include('../partials/navbar'); %>
+
+    <h1>Locations</h1>
+
+  <!-- Filter buttons -->
+<div class="filter-buttons">
+    <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+  </div>
+
   <main class="container">
     <% if (channels && channels.length > 0) { %>
       <ul>
