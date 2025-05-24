@@ -222,19 +222,12 @@ display: none !important;
 }
 
 .filter-buttons button {
-margin: 0 5px 10px 0;
-padding: 8px 16px;
-border: none;
-background: #dbe53d;
-color: #423939;
-border-radius: 4px;
-cursor: pointer;
-font-weight: bold;
+  background: #e6f9e6; /* pale green */
+  color: #2d982d;
 }
-      
 .filter-buttons button.active {
-background: #54ff9b;
-color: #fff;
+  background: #2d982d;
+  color: #fff;
 }
       
 .cards-container {
