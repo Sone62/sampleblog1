@@ -105,7 +105,6 @@ app.get('/gen_recyclehg', function(req, res) {
 });
 
 
-
 app.get('/gen_recyclehgbatt', function(req, res) {
   res.render('pages/gen_recyclehgbatt');
 });
@@ -119,6 +118,10 @@ app.get('/gen_donatehg', function(req, res) {
 });
 
 // Woodlands-specific pages
+app.get('/gen_woodlands', function(req, res) {
+  res.render('pages/gen_woodlands');
+});
+
 app.get('/gen_recyclewoodlands', function(req, res) {
   res.render('pages/gen_recyclewoodlands');
 });
@@ -131,9 +134,7 @@ app.get('/gen_donatewoodlands', function(req, res) {
   res.render('pages/gen_donatewoodlands');
 });
 
-app.get('/gen_woodlands', function(req, res) {
-  res.render('pages/gen_woodlands');
-});
+
 
 //backend to pass data to frontend
 app.get('/channels', async (req, res) => {
