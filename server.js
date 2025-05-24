@@ -76,6 +76,9 @@ app.get('/gen_bags', function(req, res) {
 app.get('/gen_book', function(req, res) {
   res.render('pages/gen_book');
 });
+app.get('/gen_books', function(req, res) {
+  res.render('pages/gen_books');
+});
 
 
 //AMK-specific pages
