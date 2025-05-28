@@ -313,6 +313,16 @@
       </div>
     </div>
   </main>
+  <script>
+  document.getElementById("estatecode").addEventListener("change", function() {
+    const selectedOption = this.options[this.selectedIndex];
+    const link = selectedOption.getAttribute("data-link");
+    
+    if (link) {
+        window.location.href = link; 
+    }
+});
+</script>
   <script src="/js/script.js"></script>
 </body>
 </html>
