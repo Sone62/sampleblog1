@@ -22,7 +22,6 @@
 <%- include('../partials/navbar'); %>
     <h1>Locations - Clothing</h1>
 
-
 <div class="filter-buttons">
     <button onclick="filterCards('all', this)" class="active"><a href="/gen">All</a></button>
     <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
@@ -68,26 +67,6 @@
       <p><strong>Distance:</strong> Various</p>
     </div>
   </div>
-
-  <script>
-    function filterCards(category, btn) {
-      // Remove 'active' class from all buttons
-      document.querySelectorAll('.filter-buttons button').forEach(b => b.classList.remove('active'));
-      // Add 'active' to the clicked button
-      if(btn) btn.classList.add('active');
-      // Filter cards
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        if (category === 'all' || card.getAttribute('data-category') === category) {
-          card.classList.remove('hidden');
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-    }
-    // On page load, show all cards
-    filterCards('all', document.querySelector('.filter-buttons button'));
-  </script>
-
+</main>
 </body>
 </html>
