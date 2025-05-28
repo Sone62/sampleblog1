@@ -95,10 +95,11 @@ li.done {
 }
 a {
     text-decoration: none;
-    color: #000000; /* Default color */
+    color: #1b882a; /* Default color */
     transition: color 0.3s ease, box-shadow 0.3s ease;
     padding: 5px;
     border-radius: 5px;
+    font-weight: bold;
 }
 
 a:hover {
