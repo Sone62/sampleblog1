@@ -102,9 +102,10 @@ a {
 }
 
 a:hover {
-    color: #000000; /* Darker color on hover */
+    color: #429d09; /* Darker color on hover */
     text-decoration: none;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
 }
 
 .banner-img {
@@ -231,7 +232,7 @@ display: none !important;
   color: #fff;
 }
 .filter-buttons button:hover:not(.active) {
-  background: #3a0fe9;
+  background: #b2f2b2; /* a light, fresh green */
   color: #1a6b1a;
 }
       
