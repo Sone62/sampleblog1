@@ -186,6 +186,12 @@ app.post('/results', async (req, res) => {
   }
 });
 
+// New route for home2 page
+app.get('/home2', async (req, res) => {
+  const channels = await prisma.channel.findMany(); // Adjust model name if needed
+  res.render('pages/home2', { channels });
+});
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
