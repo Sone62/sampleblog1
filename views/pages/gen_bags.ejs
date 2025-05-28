@@ -20,13 +20,13 @@
   <main class="container">
     <%- include('../partials/navbar'); %>
     <h1>Locations - Bags and Accessories</h1>
-      <a href="/gen_bags" class="filter-link">All</a>
-      <a href="/gen_recycle" class="filter-link">Recycle</a>
-      <a href="/gen_repair" class="filter-link">Repair</a>
-      <a href="/gen_donate" class="filter-link">Donate</a>
- 
-          </div>
-  
+<div class="filter-buttons">
+    <button onclick="filterCards('all', this)"><a href="/gen_bags">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+  </div>
+
     <div class="cards-container">
       <!-- Recycle Cards: Bags & Accessories -->
       <div class="card" data-category="Recycle">

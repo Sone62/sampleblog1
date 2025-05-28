@@ -19,18 +19,16 @@
 <body>
   <main class="container">
     <%- include('../partials/navbar'); %>
-    <h1>Locations - ICT equipment, laptop, mobile</h1>
+    <h1>Locations - ICT Equipment, Laptop, Mobile</h1>
 
-    <div class="filter-buttons">
-      <a href="/gen" class="filter-link">All</a>
-      <a href="/gen_recycle" class="filter-link active">Recycle</a>
-      <a href="/gen_repair" class="filter-link">Repair</a>
-      <a href="/gen_donate" class="filter-link">Donate</a>
-  
-    </div>
+<div class="filter-buttons">
+    <button onclick="filterCards('all', this)"><a href="/gen_ewaste">All</a></button>
+    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
+    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
+    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
+  </div>
   
     <div class="cards-container">
-      <!-- Example: Highlight the nearest location as recommended -->
       <div class="card recommended-overall" data-category="Recycle">
         <h2>ALBA E-Waste Bin - Ang Mo Kio Hub <span class="badge"><em>Recommended</em></span></h2>
         <p><strong>Address:</strong> 53 Ang Mo Kio Ave 3, Singapore 569933</p>

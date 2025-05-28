@@ -7,68 +7,65 @@
     <link rel="stylesheet" href="/css/style.css" >
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGYMZRZ03H');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RGYMZRZ03H');
+    </script>
 </head>
 
 <body>
   <main class="container">
-<!-- Navbar which can be reused across other pages -->
-<%- include('../partials/navbar'); %>
-    <h1>Locations - Furniture </h1>
-
+    <!-- Navbar which can be reused across other pages -->
+    <%- include('../partials/navbar'); %>
+    <h1>Locations - Furniture</h1>
 
 <div class="filter-buttons">
-    <button onclick="filterCards('all', this)"><a href="/gen">All</a></button>
+    <button onclick="filterCards('all', this)"><a href="/gen_furniture">All</a></button>
     <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
     <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
     <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
   </div>
   
-<div class="cards-container">
-  <!-- Donate Cards: Furniture Donation Locations -->
-  <div class="card" data-category="Donate">
-    <h2>Pass-It-On (Online Platform)</h2>
-    <p><strong>Address:</strong> Online platform for donating usable furniture and household items to those in need in Singapore.</p>
-    <p><strong>Services:</strong> Connects donors with Voluntary Welfare Organisations and individuals in need. Large items like furniture can be matched to requests.</p>
-    <p><strong>Contact:</strong> <a href="https://www.passiton.org.sg/" target="_blank">passiton.org.sg</a></p>
-    <p><strong>Distance:</strong> N/A (Online)</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>MINDS Shop Plus @ Hougang</h2>
-    <p><strong>Address:</strong> 11 Hougang Ave 6, #01-02, Singapore 538789</p>
-    <p><strong>Services:</strong> Accepts pre-loved furniture, household items, and more. Proceeds support persons with intellectual disabilities.</p>
-    <p><strong>Contact:</strong> 8180 1760</p>
-    <p><strong>Distance:</strong> Hougang</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>The Salvation Army - Donation In Kind Booths</h2>
-    <p><strong>Address:</strong> Multiple locations (e.g., 356 Tanglin Road, Singapore 247674)</p>
-    <p><strong>Services:</strong> Accepts furniture, household items, and more. Items in good condition are resold to support community programs.</p>
-    <p><strong>Contact:</strong> 1800-227-1183</p>
-    <p><strong>Distance:</strong> Various</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>HDB Upcycling Corner</h2>
-    <p><strong>Address:</strong> Various HDB Town Councils (check with your local Town Council)</p>
-    <p><strong>Services:</strong> Accepts reusable furniture and household items for upcycling or redistribution.</p>
-    <p><strong>Contact:</strong> Check with your Town Council</p>
-    <p><strong>Distance:</strong> Various</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>Blessings in a Bag</h2>
-    <p><strong>Address:</strong> 2 Pandan Valley, #01-206, Singapore 597626</p>
-    <p><strong>Services:</strong> Occasionally accepts furniture and household items for families in need (check website for current needs).</p>
-    <p><strong>Contact:</strong> <a href="https://www.blessingsinabag.org/" target="_blank">blessingsinabag.org</a></p>
-    <p><strong>Distance:</strong> Pandan Valley</p>
-  </div>
-</div>
-
+    <div class="cards-container">
+      <div class="card" data-category="Donate">
+        <h2>Pass-It-On (Online Platform)</h2>
+        <p><strong>Address:</strong> Online platform for donating usable furniture and household items to those in need in Singapore.</p>
+        <p><strong>Services:</strong> Connects donors with Voluntary Welfare Organisations and individuals in need. Large items like furniture can be matched to requests.</p>
+        <p><strong>Contact:</strong> <a href="https://www.passiton.org.sg/" target="_blank">passiton.org.sg</a></p>
+        <p><strong>Distance:</strong> N/A (Online)</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>MINDS Shop Plus @ Hougang</h2>
+        <p><strong>Address:</strong> 11 Hougang Ave 6, #01-02, Singapore 538789</p>
+        <p><strong>Services:</strong> Accepts pre-loved furniture, household items, and more. Proceeds support persons with intellectual disabilities.</p>
+        <p><strong>Contact:</strong> 8180 1760</p>
+        <p><strong>Distance:</strong> Hougang</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>The Salvation Army - Donation In Kind Booths</h2>
+        <p><strong>Address:</strong> Multiple locations (e.g., 356 Tanglin Road, Singapore 247674)</p>
+        <p><strong>Services:</strong> Accepts furniture, household items, and more. Items in good condition are resold to support community programs.</p>
+        <p><strong>Contact:</strong> 1800-227-1183</p>
+        <p><strong>Distance:</strong> Various</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>HDB Upcycling Corner</h2>
+        <p><strong>Address:</strong> Various HDB Town Councils (check with your local Town Council)</p>
+        <p><strong>Services:</strong> Accepts reusable furniture and household items for upcycling or redistribution.</p>
+        <p><strong>Contact:</strong> Check with your Town Council</p>
+        <p><strong>Distance:</strong> Various</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>Blessings in a Bag</h2>
+        <p><strong>Address:</strong> 2 Pandan Valley, #01-206, Singapore 597626</p>
+        <p><strong>Services:</strong> Occasionally accepts furniture and household items for families in need (check website for current needs).</p>
+        <p><strong>Contact:</strong> <a href="https://www.blessingsinabag.org/" target="_blank">blessingsinabag.org</a></p>
+        <p><strong>Distance:</strong> Pandan Valley</p>
+      </div>
+    </div>
   </main>
   <script src="/js/script.js"></script>
 </body>

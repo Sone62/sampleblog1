@@ -7,68 +7,66 @@
     <link rel="stylesheet" href="/css/style.css" >
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGYMZRZ03H');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RGYMZRZ03H');
+    </script>
 </head>
 
 <body>
   <main class="container">
-<!-- Navbar which can be reused across other pages -->
+    <!-- Navbar which can be reused across other pages -->
 <%- include('../partials/navbar'); %>
     <h1>Locations - Clothing</h1>
-
 <div class="filter-buttons">
-    <button onclick="filterCards('all', this)"><a href="/gen">All</a></button>
+    <button onclick="filterCards('all', this)"><a href="/gen_clothes">All</a></button>
     <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
     <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
     <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
   </div>
   
-  <div class="cards-container">
-    <!-- Donate Cards: Clothing Donation Locations -->
-    <div class="card" data-category="Donate">
-      <h2>MINDS Shop Plus @ Hougang</h2>
-      <p><strong>Address:</strong> 11 Hougang Ave 6, #01-02, Singapore 538789</p>
-      <p><strong>Services:</strong> Accepts pre-loved clothing, accessories, and household items. Proceeds support persons with intellectual disabilities.</p>
-      <p><strong>Contact:</strong> 8180 1760</p>
-      <p><strong>Distance:</strong> Hougang</p>
+    <div class="cards-container">
+      <!-- Donate Cards: Clothing Donation Locations -->
+      <div class="card" data-category="Donate">
+        <h2>MINDS Shop Plus @ Hougang</h2>
+        <p><strong>Address:</strong> 11 Hougang Ave 6, #01-02, Singapore 538789</p>
+        <p><strong>Services:</strong> Accepts pre-loved clothing, accessories, and household items. Proceeds support persons with intellectual disabilities.</p>
+        <p><strong>Contact:</strong> 8180 1760</p>
+        <p><strong>Distance:</strong> Hougang</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>Salvation Army Donation Centre - Bishan</h2>
+        <p><strong>Address:</strong> 7 Bishan Street 13, Singapore 579798</p>
+        <p><strong>Services:</strong> Accepts clothing, shoes, bags, and other reusable items.</p>
+        <p><strong>Contact:</strong> 6555 0251</p>
+        <p><strong>Distance:</strong> Bishan</p>
+      </div>
+      <div class="card" data-category="Recycle">
+        <h2>Greensquare Textile Recycling Bin - Clementi Mall</h2>
+        <p><strong>Address:</strong> 3155 Commonwealth Ave West, Singapore 129588</p>
+        <p><strong>Services:</strong> Accepts clean clothes, shoes, and household linens for recycling and reuse.</p>
+        <p><strong>Contact:</strong> 9002 9606</p>
+        <p><strong>Distance:</strong> Clementi</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>Pass-It-On (Online Platform)</h2>
+        <p><strong>Address:</strong> Online platform for donating usable clothing and items to those in need in Singapore.</p>
+        <p><strong>Services:</strong> Connects donors with Voluntary Welfare Organisations and individuals in need.</p>
+        <p><strong>Contact:</strong> <a href="https://www.passiton.org.sg/" target="_blank">passiton.org.sg</a></p>
+        <p><strong>Distance:</strong> N/A (Online)</p>
+      </div>
+      <div class="card" data-category="Recycle">
+        <h2>H&M Garment Collecting Programme</h2>
+        <p><strong>Address:</strong> Multiple outlets (e.g., Orchard Building, Ion Orchard, VivoCity)</p>
+        <p><strong>Services:</strong> Accepts any brand of unwanted clothing and textiles for recycling.</p>
+        <p><strong>Contact:</strong> 6235 1459</p>
+        <p><strong>Distance:</strong> Various</p>
+      </div>
     </div>
-    <div class="card" data-category="Donate">
-      <h2>Salvation Army Donation Centre - Bishan</h2>
-      <p><strong>Address:</strong> 7 Bishan Street 13, Singapore 579798</p>
-      <p><strong>Services:</strong> Accepts clothing, shoes, bags, and other reusable items.</p>
-      <p><strong>Contact:</strong> 6555 0251</p>
-      <p><strong>Distance:</strong> Bishan</p>
-    </div>
-    <div class="card" data-category="Donate">
-      <h2>Greensquare Textile Recycling Bin - Clementi Mall</h2>
-      <p><strong>Address:</strong> 3155 Commonwealth Ave West, Singapore 129588</p>
-      <p><strong>Services:</strong> Accepts clean clothes, shoes, and household linens for recycling and reuse.</p>
-      <p><strong>Contact:</strong> 9002 9606</p>
-      <p><strong>Distance:</strong> Clementi</p>
-    </div>
-    <div class="card" data-category="Donate">
-      <h2>Pass-It-On (Online Platform)</h2>
-      <p><strong>Address:</strong> Online platform for donating usable clothing and items to those in need in Singapore.</p>
-      <p><strong>Services:</strong> Connects donors with Voluntary Welfare Organisations and individuals in need.</p>
-      <p><strong>Contact:</strong> <a href="https://www.passiton.org.sg/" target="_blank">passiton.org.sg</a></p>
-      <p><strong>Distance:</strong> N/A (Online)</p>
-    </div>
-    <div class="card" data-category="Donate">
-      <h2>H&M Garment Collecting Programme</h2>
-      <p><strong>Address:</strong> Multiple outlets (e.g., Orchard Building, Ion Orchard, VivoCity)</p>
-      <p><strong>Services:</strong> Accepts any brand of unwanted clothing and textiles for recycling.</p>
-      <p><strong>Contact:</strong> 6235 1459</p>
-      <p><strong>Distance:</strong> Various</p>
-    </div>
-  </div>
-</main>
-
+  </main>
   <script src="/js/script.js"></script>
 </body>
 </html>
