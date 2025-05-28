@@ -253,6 +253,17 @@ width: 320px;
 min-width: 220px;
 }
 
+.card.recommended-overall {
+  border: 3px solid #1976d2;
+  background: #e3f0ff;
+  box-shadow: 0 0 10px #1976d233;
+}
+.card.recommended-repair-donate {
+  border: 3px solid #42a5f5;
+  background: #e6f7ff;
+  box-shadow: 0 0 10px #42a5f533;
+}
+
 .about_container {
   max-width: 700px;
   margin: 0 auto;
@@ -337,4 +348,4 @@ min-width: 220px;
 }
 .direction-link:hover {
   text-decoration: underline;
-}     
+}
