@@ -96,7 +96,7 @@ li.done {
 a {
     text-decoration-line: underline;
     text-decoration-style: dotted;
-    color: #1b882a; /* Default color */
+    color: #020202; /* Default color */
     transition: color 0.3s ease, box-shadow 0.3s ease;
     padding: 5px;
     border-radius: 5px;
@@ -104,7 +104,7 @@ a {
 }
 
 a:hover {
-    color: #429d09; /* Darker color on hover */
+    color: #55ad1e;
     text-decoration: underline;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: bold;
