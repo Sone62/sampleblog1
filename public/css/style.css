@@ -230,8 +230,8 @@ display: none !important;
   transition: background 0.2s, color 0.2s;
 }
 .filter-buttons button.active {
-  background: #2d982d;
-  color: #fff;
+  background: #b2f2b2;
+  color: #;
 }
 .filter-buttons button:hover:not(.active) {
   background: #b2f2b2; /* a light, fresh green */
