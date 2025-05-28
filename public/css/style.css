@@ -314,3 +314,25 @@ min-width: 220px;
           margin-bottom: 1rem;
         }
       }
+
+ .location-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.map-container {
+  margin-top: 10px;
+}
+
+.direction-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007bff;
+  text-decoration: none;
+}
+.direction-link:hover {
+  text-decoration: underline;
+}     

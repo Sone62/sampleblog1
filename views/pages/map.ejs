@@ -1,0 +1,37 @@
+<% locations.forEach(loc => { %>
+  <div class="location-card" onclick="toggleMap('map-<%= loc.id %>')">
+    <h3><%= loc.name %></h3>
+    <p><%= loc.address %></p>
+
+    <div id="map-<%= loc.id %>" class="map-container" style="display: none;">
+      <!-- Embed Google Map with coordinates -->
+      <iframe
+        width="100%"
+        height="250"
+        style="border:0"
+        loading="lazy"
+        allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=<%= loc.y %>,<%= loc.x %>">
+      </iframe>
+
+      <!-- Directions button -->
+      <a
+        href="https://www.google.com/maps/dir/?api=1&destination=<%= loc.y %>,<%= loc.x %>"
+        target="_blank"
+        class="direction-link">
+        📍 Get Directions
+      </a>
+    </div>
+  </div>
+<% }) %>
+
+<script>
+  function toggleMap(mapId) {
+    const mapContainer = document.getElementById(mapId);
+    if (mapContainer.style.display === "none") {
+      mapContainer.style.display = "block";
+    } else {
+      mapContainer.style.display = "none";
+    }
+  }
