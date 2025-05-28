@@ -222,12 +222,17 @@ display: none !important;
 }
 
 .filter-buttons button {
-  background: #e6f9e6; /* pale green */
+  background: #e6f9e6;
   color: #2d982d;
+  transition: background 0.2s, color 0.2s;
 }
 .filter-buttons button.active {
   background: #2d982d;
   color: #fff;
+}
+.filter-buttons button:hover:not(.active) {
+  background: #b2f2b2;
+  color: #1a6b1a;
 }
       
 .cards-container {
