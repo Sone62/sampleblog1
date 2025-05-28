@@ -7,67 +7,68 @@
     <link rel="stylesheet" href="/css/style.css" >
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGYMZRZ03H');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RGYMZRZ03H');
+    </script>
 </head>
 
 <body>
   <main class="container">
-<!-- Navbar which can be reused across other pages -->
-<%- include('../partials/navbar'); %>
+    <!-- Navbar which can be reused across other pages -->
+    <%- include('../partials/navbar'); %>
     <h1>Locations - Books</h1>
 
+    <div class="filter-buttons">
+      <a href="/gen_books" class="filter-link">All</a>
+      <a href="/gen_recycle" class="filter-link">Recycle</a>
+      <a href="/gen_repair" class="filter-link">Repair</a>
+      <a href="/gen_donate" class="filter-link">Donate</a>
 
-<div class="filter-buttons">
-    <button onclick="filterCards('all', this)"><a href="/gen">All</a></button>
-    <button onclick="filterCards('Recycle', this)"><a href="/gen_recycle">Recycle</a></button>
-    <button onclick="filterCards('Repair', this)"><a href="/gen_repair">Repair</a></button>
-    <button onclick="filterCards('Donate', this)"><a href="/gen_donate">Donate</a></button>
-  </div>
+    </div>
   
-  <div class="cards-container">
-  <!-- Donate Cards: Book Donation Locations -->
-  <div class="card" data-category="Donate">
-    <h2>Books Beyond Borders</h2>
-    <p><strong>Address:</strong> 1 Commonwealth Lane, #06-22, Singapore 149544</p>
-    <p><strong>Services:</strong> Accepts gently used English books for resale and donation to schools in need.</p>
-    <p><strong>Contact:</strong> <a href="https://www.booksbeyondborders.org/" target="_blank">booksbeyondborders.org</a></p>
-    <p><strong>Distance:</strong> Queenstown</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>National Library Board (NLB) Book Exchange Corners</h2>
-    <p><strong>Address:</strong> Various public libraries across Singapore</p>
-    <p><strong>Services:</strong> Accepts used books in good condition for exchange with other readers.</p>
-    <p><strong>Contact:</strong> 6332 3255</p>
-    <p><strong>Distance:</strong> Multiple locations</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>FairPrice Share-A-Textbook</h2>
-    <p><strong>Address:</strong> Selected NTUC FairPrice outlets (seasonal, check website for details)</p>
-    <p><strong>Services:</strong> Accepts used textbooks and assessment books for redistribution to students in need.</p>
-    <p><strong>Contact:</strong> 6552 2722</p>
-    <p><strong>Distance:</strong> Various</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>Dignity Mama Stall</h2>
-    <p><strong>Address:</strong> NUH Medical Centre, 1 Lower Kent Ridge Road, #01-42, Singapore 119082</p>
-    <p><strong>Services:</strong> Accepts pre-loved books for resale by youth with special needs and their families.</p>
-    <p><strong>Contact:</strong> 8189 7678</p>
-    <p><strong>Distance:</strong> Kent Ridge</p>
-  </div>
-  <div class="card" data-category="Donate">
-    <h2>Books for Hope</h2>
-    <p><strong>Address:</strong> 10 Ubi Crescent, Ubi Techpark, Lobby E, #05-95, Singapore 408564</p>
-    <p><strong>Services:</strong> Accepts children’s books in good condition for donation to underprivileged children.</p>
-    <p><strong>Contact:</strong> <a href="https://www.booksforhope.sg/" target="_blank">booksforhope.sg</a></p>
-    <p><strong>Distance:</strong> Ubi</p>
-  </div>
-</div>
-    <script src="/js/script.js"></script>
+    <div class="cards-container">
+      <!-- Donate Cards: Book Donation Locations -->
+      <div class="card" data-category="Donate">
+        <h2>Books Beyond Borders</h2>
+        <p><strong>Address:</strong> 1 Commonwealth Lane, #06-22, Singapore 149544</p>
+        <p><strong>Services:</strong> Accepts gently used English books for resale and donation to schools in need.</p>
+        <p><strong>Contact:</strong> <a href="https://www.booksbeyondborders.org/" target="_blank">booksbeyondborders.org</a></p>
+        <p><strong>Distance:</strong> Queenstown</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>National Library Board (NLB) Book Exchange Corners</h2>
+        <p><strong>Address:</strong> Various public libraries across Singapore</p>
+        <p><strong>Services:</strong> Accepts used books in good condition for exchange with other readers.</p>
+        <p><strong>Contact:</strong> 6332 3255</p>
+        <p><strong>Distance:</strong> Multiple locations</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>FairPrice Share-A-Textbook</h2>
+        <p><strong>Address:</strong> Selected NTUC FairPrice outlets (seasonal, check website for details)</p>
+        <p><strong>Services:</strong> Accepts used textbooks and assessment books for redistribution to students in need.</p>
+        <p><strong>Contact:</strong> 6552 2722</p>
+        <p><strong>Distance:</strong> Various</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>Dignity Mama Stall</h2>
+        <p><strong>Address:</strong> NUH Medical Centre, 1 Lower Kent Ridge Road, #01-42, Singapore 119082</p>
+        <p><strong>Services:</strong> Accepts pre-loved books for resale by youth with special needs and their families.</p>
+        <p><strong>Contact:</strong> 8189 7678</p>
+        <p><strong>Distance:</strong> Kent Ridge</p>
+      </div>
+      <div class="card" data-category="Donate">
+        <h2>Books for Hope</h2>
+        <p><strong>Address:</strong> 10 Ubi Crescent, Ubi Techpark, Lobby E, #05-95, Singapore 408564</p>
+        <p><strong>Services:</strong> Accepts children’s books in good condition for donation to underprivileged children.</p>
+        <p><strong>Contact:</strong> <a href="https://www.booksforhope.sg/" target="_blank">booksforhope.sg</a></p>
+        <p><strong>Distance:</strong> Ubi</p>
+      </div>
+    </div>
+  </main>
+  <script src="/js/script.js"></script>
 </body>
 </html>
