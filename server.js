@@ -20,6 +20,17 @@ app.get('/', async (req, res) => {
   }
 });
 
+// Home 2 test page
+app.get('/', async (req, res) => {
+  try {
+    const channels = await prisma.Channels.findMany();
+    res.render('pages/home2', { channels });
+  } catch (error) {
+    console.error(error);
+    res.render('pages/home2', { channels: [] });
+  }
+});
+
 // about page
 app.get('/about', function(req, res) {
     res.render('pages/about');
@@ -29,6 +40,10 @@ app.get('/tip', function(req, res) {
   res.render('pages/tip');
 });
 
+// MAP TEST page
+app.get('/map', function(req, res) {
+    res.render('pages/map');
+});
 
 // gen
 app.get('/gen', function(req, res) {
@@ -196,3 +211,4 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
