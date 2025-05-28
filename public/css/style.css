@@ -94,7 +94,8 @@ li.done {
   text-decoration-color:#000000;
 }
 a {
-    text-decoration: none;
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
     color: #1b882a; /* Default color */
     transition: color 0.3s ease, box-shadow 0.3s ease;
     padding: 5px;
