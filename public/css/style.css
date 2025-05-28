@@ -231,7 +231,7 @@ display: none !important;
   color: #fff;
 }
 .filter-buttons button:hover:not(.active) {
-  background: #b2f2b2;
+  background: #3a0fe9;
   color: #1a6b1a;
 }
       
