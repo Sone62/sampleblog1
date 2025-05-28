@@ -20,16 +20,6 @@ app.get('/', async (req, res) => {
   }
 });
 
-// Home 2 test page
-app.get('/', async (req, res) => {
-  try {
-    const channels = await prisma.Channels.findMany();
-    res.render('pages/home2', { channels });
-  } catch (error) {
-    console.error(error);
-    res.render('pages/home2', { channels: [] });
-  }
-});
 
 // about page
 app.get('/about', function(req, res) {
