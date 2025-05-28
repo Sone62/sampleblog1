@@ -22,27 +22,64 @@
     <h1>Locations near Hougang - Recycle</h1>
 
     <div class="filter-buttons">
-       <button onclick="filterCards('all', this)"><a href="/gen_hg">All</a></button>
-      <button onclick="filterCards('Recycle', this)"><a href="/gen_recyclehg">Recycle</a></button>
-      <button onclick="filterCards('Repair', this)"><a href="/gen_repairhg">Repair</a></button>
-      <button onclick="filterCards('Donate', this)"><a href="/gen_donatehg">Donate</a></button>
+      <a href="/gen_hg" class="filter-link">All</a>
+      <a href="/gen_recyclehg" class="filter-link active">Recycle</a>
+      <a href="/gen_repairhg" class="filter-link">Repair</a>
+      <a href="/gen_donatehg" class="filter-link">Donate</a>
     </div>
-  
+
     <div class="cards-container">
-      <!-- Only Hougang Recycle Cards -->
+      <!-- Sorted by distance, nearest first, with Get Directions links -->
+      <div class="card recommended-overall" data-category="Recycle">
+        <h2>ALBA Battery Recycling Bin - Hougang MRT Station <span class="badge">Recommended</span></h2>
+        <p><strong>Address:</strong> 80 Hougang Central, Singapore 538758</p>
+        <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
+        <p><strong>Contact:</strong> 1800-2255-2582</p>
+        <p><strong>Distance:</strong> ~0.3 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=80+Hougang+Central,+Singapore+538758" target="_blank">
+            Get Directions
+          </a>
+          <a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a>
+        </p>
+      </div>
       <div class="card" data-category="Recycle">
         <h2>Bloobox Recycling Bin - Hougang Mall</h2>
         <p><strong>Address:</strong> 90 Hougang Ave 10, Hougang Mall, Singapore 538766</p>
         <p><strong>Services:</strong> Accepts paper, plastic, metal, and glass recyclables. Open to public 24/7.</p>
         <p><strong>Contact:</strong> 1800-2255-632</p>
         <p><strong>Distance:</strong> ~0.5 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=90+Hougang+Ave+10,+Singapore+538766" target="_blank">
+            Get Directions
+          </a>
+        </p>
       </div>
       <div class="card" data-category="Recycle">
-        <h2>RVM - Hougang Community Club</h2>
+        <h2>ALBA Battery Recycling Bin - Hougang Mall</h2>
+        <p><strong>Address:</strong> 90 Hougang Ave 10, Hougang Mall, Singapore 538766</p>
+        <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
+        <p><strong>Contact:</strong> 1800-2255-2582</p>
+        <p><strong>Distance:</strong> ~0.5 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=90+Hougang+Ave+10,+Singapore+538766" target="_blank">
+            Get Directions
+          </a>
+          <a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a>
+        </p>
+      </div>
+      <div class="card" data-category="Recycle">
+        <h2>ALBA Battery Recycling Bin - Hougang Community Club</h2>
         <p><strong>Address:</strong> 35 Hougang Ave 3, Singapore 538840</p>
-        <p><strong>Services:</strong> Reverse Vending Machine for recycling plastic bottles and cans.</p>
-        <p><strong>Contact:</strong> 6387 4869</p>
+        <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
+        <p><strong>Contact:</strong> 1800-2255-2582</p>
         <p><strong>Distance:</strong> ~1.2 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=35+Hougang+Ave+3,+Singapore+538840" target="_blank">
+            Get Directions
+          </a>
+          <a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a>
+        </p>
       </div>
       <div class="card" data-category="Recycle">
         <h2>Bloobox Recycling Bin - Hougang Ave 8</h2>
@@ -50,45 +87,27 @@
         <p><strong>Services:</strong> Accepts paper, plastic, metal, and glass recyclables.</p>
         <p><strong>Contact:</strong> 1800-2255-632</p>
         <p><strong>Distance:</strong> ~1.8 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=Block+684+Hougang+Ave+8,+Singapore+530684" target="_blank">
+            Get Directions
+          </a>
+        </p>
+      </div>
+      <div class="card" data-category="Recycle">
+        <h2>ALBA Battery Recycling Bin - Block 684 Hougang Ave 8</h2>
+        <p><strong>Address:</strong> Block 684 Hougang Ave 8, Singapore 530684</p>
+        <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
+        <p><strong>Contact:</strong> 1800-2255-2582</p>
+        <p><strong>Distance:</strong> ~1.8 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=Block+684+Hougang+Ave+8,+Singapore+530684" target="_blank">
+            Get Directions
+          </a>
+          <a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a>
+        </p>
       </div>
     </div>
-
-    <div class="cards-container">
-  <!-- Hougang Battery Recycling Locations -->
-  <div class="card" data-category="Recycle">
-    <h2>ALBA Battery Recycling Bin - Hougang Mall</h2>
-    <p><strong>Address:</strong> 90 Hougang Ave 10, Hougang Mall, Singapore 538766</p>
-    <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
-    <p><strong>Contact:</strong> 1800-2255-2582</p>
-    <p><strong>Distance:</strong> ~0.5 km</p>
-    <p><a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a></p>
-  </div>
-  <div class="card" data-category="Recycle">
-    <h2>ALBA Battery Recycling Bin - Hougang Community Club</h2>
-    <p><strong>Address:</strong> 35 Hougang Ave 3, Singapore 538840</p>
-    <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
-    <p><strong>Contact:</strong> 1800-2255-2582</p>
-    <p><strong>Distance:</strong> ~1.2 km</p>
-    <p><a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a></p>
-  </div>
-  <div class="card" data-category="Recycle">
-    <h2>ALBA Battery Recycling Bin - Block 684 Hougang Ave 8</h2>
-    <p><strong>Address:</strong> Block 684 Hougang Ave 8, Singapore 530684</p>
-    <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
-    <p><strong>Contact:</strong> 1800-2255-2582</p>
-    <p><strong>Distance:</strong> ~1.8 km</p>
-    <p><a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a></p>
-  </div>
-  <div class="card" data-category="Recycle">
-    <h2>ALBA Battery Recycling Bin - Hougang MRT Station</h2>
-    <p><strong>Address:</strong> 80 Hougang Central, Singapore 538758</p>
-    <p><strong>Services:</strong> Accepts household batteries (AA, AAA, C, D, 9V, coin/button cells).</p>
-    <p><strong>Contact:</strong> 1800-2255-2582</p>
-    <p><strong>Distance:</strong> ~0.3 km</p>
-    <p><a href="https://www.alba-wh.sg/battery-recycling/" target="_blank">More Info</a></p>
-  </div>
-</div>
   </main>
-    <script src="/js/script.js"></script>
+  <script src="/js/script.js"></script>
 </body>
 </html>

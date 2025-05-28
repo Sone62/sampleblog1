@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="/css/style.css" >
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-RGYMZRZ03H');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RGYMZRZ03H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RGYMZRZ03H');
+    </script>
 </head>
 
 <body>
@@ -22,20 +22,25 @@
     <h1>Locations near Hougang - Repair</h1>
 
     <div class="filter-buttons">
-      <button onclick="filterCards('all', this)"><a href="/gen_hg">All</a></button>
-      <button onclick="filterCards('Recycle', this)"><a href="/gen_recyclehg">Recycle</a></button>
-      <button onclick="filterCards('Repair', this)"><a href="/gen_repairhg">Repair</a></button>
-      <button onclick="filterCards('Donate', this)"><a href="/gen_donatehg">Donate</a></button>
+      <a href="/gen_hg" class="filter-link">All</a>
+      <a href="/gen_recyclehg" class="filter-link">Recycle</a>
+      <a href="/gen_repairhg" class="filter-link active">Repair</a>
+      <a href="/gen_donatehg" class="filter-link">Donate</a>
     </div>
 
-
-      <!-- Repair Cards (Hougang) -->
-      <div class="card" data-category="Repair">
-        <h2>Mobile Life - Hougang Mall</h2>
+    <div class="cards-container">
+      <!-- Sorted by distance, nearest first, with Get Directions links -->
+      <div class="card recommended-repair-donate" data-category="Repair">
+        <h2>Mobile Life - Hougang Mall <span class="badge">Recommended</span></h2>
         <p><strong>Address:</strong> 90 Hougang Ave 10, #04-09 Hougang Mall, Singapore 538766</p>
         <p><strong>Services:</strong> Mobile phone and tablet repair services.</p>
         <p><strong>Contact:</strong> 6385 1234</p>
         <p><strong>Distance:</strong> ~0.5 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=90+Hougang+Ave+10,+Singapore+538766" target="_blank">
+            Get Directions
+          </a>
+        </p>
       </div>
       <div class="card" data-category="Repair">
         <h2>Hock Siong Electrical Service</h2>
@@ -43,7 +48,13 @@
         <p><strong>Services:</strong> Repairs for household electrical appliances.</p>
         <p><strong>Contact:</strong> 6288 1234</p>
         <p><strong>Distance:</strong> ~1.0 km</p>
+        <p>
+          <a class="direction-link" href="https://www.google.com/maps/search/?api=1&query=Blk+805+Hougang+Central,+%2301-116,+Singapore+530805" target="_blank">
+            Get Directions
+          </a>
+        </p>
       </div>
+    </div>
   </main>
   <script src="/js/script.js"></script>
 </body>
