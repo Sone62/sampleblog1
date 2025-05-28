@@ -22,16 +22,16 @@
     <h1>Locations near Hougang - Donate</h1>
 
     <div class="filter-buttons">
-      <button onclick="filterCards('all', this)"><a href="/gen_hg">All</a></button>
-      <button onclick="filterCards('Recycle', this)"><a href="/gen_recyclehg">Recycle</a></button>
-      <button onclick="filterCards('Repair', this)"><a href="/gen_repairhg">Repair</a></button>
-      <button onclick="filterCards('Donate', this)"><a href="/gen_donatehg">Donate</a></button>
+      <a href="/gen_hg" class="filter-link">All</a>
+      <a href="/gen_recyclehg" class="filter-link">Recycle</a>
+      <a href="/gen_repairhg" class="filter-link">Repair</a>
+      <a href="/gen_donatehg" class="filter-link active">Donate</a>
     </div>
 
     <div class="cards-container">
-      <!-- Sorted by distance, nearest first, with Get Directions links -->
-      <div class="card recommended" data-category="Donate">
-        <h2>Salvation Army Donation Booth - Hougang <span class="badge">Recommended</span></h2>
+      <!-- Nearest location highlighted as recommended based on distance only -->
+      <div class="card recommended-overall" data-category="Donate">
+        <h2>Salvation Army Donation Booth - Hougang <span class="badge"><em>Recommended</em></span></h2>
         <p><strong>Address:</strong> Blk 805 Hougang Central, Singapore 530805</p>
         <p><strong>Services:</strong> Accepts clothing, books, toys, and household items.</p>
         <p><strong>Contact:</strong> 6288 5438</p>
@@ -56,5 +56,6 @@
       </div>
     </div>
   </main>
+  <script src="/js/script.js"></script>
 </body>
 </html>

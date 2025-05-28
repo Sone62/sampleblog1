@@ -22,16 +22,16 @@
     <h1>Locations near Hougang</h1>
 
     <div class="filter-buttons">
-      <button onclick="filterCards('all', this)"><a href="/gen_hg">All</a></button>
-      <button onclick="filterCards('Recycle', this)"><a href="/gen_recyclehg">Recycle</a></button>
-      <button onclick="filterCards('Repair', this)"><a href="/gen_repairhg">Repair</a></button>
-      <button onclick="filterCards('Donate', this)"><a href="/gen_donatehg">Donate</a></button>
+      <a href="/gen_hg" class="filter-link active">All</a>
+      <a href="/gen_recyclehg" class="filter-link">Recycle</a>
+      <a href="/gen_repairhg" class="filter-link">Repair</a>
+      <a href="/gen_donatehg" class="filter-link">Donate</a>
     </div>
 
     <div class="cards-container">
-      <!-- Overall nearest: 0.5 km (Recommended - Blue) -->
+      <!-- Nearest overall location highlighted as recommended (distance only) -->
       <div class="card recommended-overall" data-category="Recycle">
-        <h2>Bloobox Recycling Bin - Hougang Mall <span class="badge">Recommended</span></h2>
+        <h2>Bloobox Recycling Bin - Hougang Mall <span class="badge"><em>Recommended</em></span></h2>
         <p><strong>Address:</strong> 90 Hougang Ave 10, Hougang Mall, Singapore 538766</p>
         <p><strong>Services:</strong> Accepts paper, plastic, metal, and glass recyclables. Open 24/7.</p>
         <p><strong>Contact:</strong> 1800-2255-632</p>
@@ -42,9 +42,9 @@
           </a>
         </p>
       </div>
-      <!-- Nearest Repair/Donate: 0.5 km (Light Blue) -->
-      <div class="card recommended-repair-donate" data-category="Repair">
-        <h2>Mobile Life - Hougang Mall <span class="badge">Recommended</span></h2>
+      <!-- All other cards are not marked as recommended -->
+      <div class="card" data-category="Repair">
+        <h2>Mobile Life - Hougang Mall</h2>
         <p><strong>Address:</strong> 90 Hougang Ave 10, #04-09 Hougang Mall, Singapore 538766</p>
         <p><strong>Services:</strong> Mobile phone and tablet repair services.</p>
         <p><strong>Contact:</strong> 6385 1234</p>
@@ -55,8 +55,8 @@
           </a>
         </p>
       </div>
-      <div class="card recommended" data-category="Repair">
-        <h2>Mobile Life - Hougang Mall <span class="badge">Recommended</span></h2>
+      <div class="card" data-category="Repair">
+        <h2>Mobile Life - Hougang Mall</h2>
         <p><strong>Address:</strong> 90 Hougang Ave 10, #04-09 Hougang Mall, Singapore 538766</p>
         <p><strong>Services:</strong> Mobile phone and tablet repair services.</p>
         <p><strong>Contact:</strong> 6385 1234</p>
@@ -67,7 +67,6 @@
           </a>
         </p>
       </div>
-      <!-- Next nearest: 1.0 km -->
       <div class="card" data-category="Repair">
         <h2>Hock Siong Electrical Service</h2>
         <p><strong>Address:</strong> Blk 805 Hougang Central, #01-116, Singapore 530805</p>
@@ -92,7 +91,6 @@
           </a>
         </p>
       </div>
-      <!-- Next: 1.2 km -->
       <div class="card" data-category="Recycle">
         <h2>ALBA Battery Recycling Bin - Hougang Community Club</h2>
         <p><strong>Address:</strong> 35 Hougang Ave 3, Singapore 538840</p>
@@ -105,7 +103,6 @@
           </a>
         </p>
       </div>
-      <!-- Furthest: 1.3 km -->
       <div class="card" data-category="Donate">
         <h2>MINDS Shop Plus @ Hougang</h2>
         <p><strong>Address:</strong> 11 Hougang Ave 6, #01-02, Singapore 538789</p>
