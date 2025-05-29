@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeclutterLY.space.... where your things go matters</title>
+    <link rel="stylesheet" href="/css/style.css" >
+</head>
+<body>
+<main class="container">
+<%- include('../partials/navbar'); %>
+<img class="banner-img" src="/images/main1.jpg" alt="where your things go matters">
+<br>
+<div class="welcome-container">
+<h3>Seeking to declutter? Where your things go matters.
+  Explore options for what to do with your items, from large appliances to small gadgets or old batteries,
+  be it to recycle, repair or donate.
+</h3>
+</div>
+
+<form action="/home2" method="POST" class="input-section">
+  <h2>What would you like to declutter?</h2>
+  <div class="input-methods">
+    <div class="input-group">
+      <label for="itemcategory">Choose a category:</label>
+      <select id="itemcategory" name="itemcategory" required>
+        <option value="">Select a category</option>
+        <option value="Ewaste">Laptops, mobile, batteries, lamps</option>
+        <option value="Batteries">Batteries</option>
+        <option value="Furniture">Furniture, Household goods</option>
+        <option value="Clothing">Clothing</option>
+        <option value="Bags">Bags and accessories</option>
+        <option value="Books">Books, stationary</option>
+      </select>
+    </div>
+    <div class="input-group location">
+      <label for="estatecode">Where are you located? </label>
+      <select id="estatecode" name="estatecode" required>
+        <option value="">Select a housing estate</option>
+        <option value="56">Ang Mo Kio (56)</option>
+        <option value="46">Bedok (46)</option>
+        <option value="57">Bishan (57)</option>
+        <!-- ...other options as in your original file... -->
+        <option value="76">Yishun (76)</option>
+      </select>
+    </div>
+  <br>
+  <button type="submit" class="declutter-btn active">Search</button>
+</form>
+
+<% if (typeof results !== 'undefined' && results.length > 0) { %>
+  <h3>Results:</h3>
+  <ul>
+    <% results.forEach(function(item) { %>
+      <li>
+        <strong><%= item.name %></strong> - <%= item.description %>
+      </li>
+    <% }) %>
+  </ul>
+<% } else if (typeof results !== 'undefined') { %>
+  <p>No results found for your selection.</p>
+<% } %>
+
+<footer>
+<p>&copy; 2025 <a href="/about"><strong>DeclutterLY.space</strong></a></p>
+</footer>
+</main>
+</body>
+</html>

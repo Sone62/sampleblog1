@@ -19,9 +19,9 @@
 <body>
   <main class="container">
     <%- include('../partials/navbar'); %>
-    <h1>Locations near Hougang - Repair</h1>
+    <h1>Locations near Hougang</h1>
 
-  <div class="filter-buttons">
+    <div class="filter-buttons">
       <button onclick="filterCards('all', this)"><a href="/gen_hg">All</a></button>
       <button onclick="filterCards('Recycle', this)"><a href="/gen_recyclehg">Recycle</a></button>
       <button onclick="filterCards('Repair', this)"><a href="/gen_repairhg">Repair</a></button>
@@ -29,9 +29,8 @@
     </div>
 
     <div class="cards-container">
-      <!-- Nearest location highlighted as recommended based on distance only -->
       <div class="card recommended-repair-donate" data-category="Repair">
-        <h2>Mobile Life - Hougang Mall <span class="badge"><em>Recommended</em></span></h2>
+        <h2>Mobile Life - Hougang Mall <span class="badge badge-repair"><em>Repair</em></span> <span class="badge"><em>Recommended</em></span></h2>
         <p><strong>Address:</strong> 90 Hougang Ave 10, #04-09 Hougang Mall, Singapore 538766</p>
         <p><strong>Services:</strong> Mobile phone and tablet repair services.</p>
         <p><strong>Contact:</strong> 6385 1234</p>
@@ -43,7 +42,7 @@
         </p>
       </div>
       <div class="card" data-category="Repair">
-        <h2>Hock Siong Electrical Service</h2>
+        <h2>Hock Siong Electrical Service <span class="badge badge-repair"><em>Repair</em></span></h2>
         <p><strong>Address:</strong> Blk 805 Hougang Central, #01-116, Singapore 530805</p>
         <p><strong>Services:</strong> Repairs for household electrical appliances.</p>
         <p><strong>Contact:</strong> 6288 1234</p>
@@ -54,20 +53,35 @@
           </a>
         </p>
       </div>
+      <!-- Example of other categories if you want to show them as in gen_hg.ejs -->
+      <!--
+      <div class="card" data-category="Recycle">
+        <h2>Recycle Point <span class="badge badge-recycle"><em>Recycle</em></span></h2>
+        <p><strong>Address:</strong> ...</p>
+        <p><strong>Services:</strong> ...</p>
+        <p><strong>Contact:</strong> ...</p>
+        <p><strong>Distance:</strong> ...</p>
+        <p>
+          <a class="direction-link" href="..." target="_blank">
+            Get Directions
+          </a>
+        </p>
+      </div>
+      -->
     </div>
   </main>
   
-<!-- Footer -->  
-<footer>
-<p>&copy; 2025 <a href="/about"><strong>DeclutterLY.space</strong></a></p>
-<br>
-<br><i>Disclaimer: This website is created for learning purposes only. 
-The information provided here should not be considered professional advice. 
-Please note that we make no guarantees regarding the accuracy, completeness, or 
-reliability of the contents of this website. Any actions you take based on the 
-contents of this website are at your own risk. We are not liable for any losses or 
-damages incurred from the use of this website.</i></p>
-</footer>
+  <!-- Footer -->  
+  <footer>
+    <p>&copy; 2025 <a href="/about"><strong>DeclutterLY.space</strong></a></p>
+    <br>
+    <br><i>Disclaimer: This website is created for learning purposes only. 
+    The information provided here should not be considered professional advice. 
+    Please note that we make no guarantees regarding the accuracy, completeness, or 
+    reliability of the contents of this website. Any actions you take based on the 
+    contents of this website are at your own risk. We are not liable for any losses or 
+    damages incurred from the use of this website.</i></p>
+  </footer>
   <script src="/js/script.js"></script>
 </body>
 </html>
